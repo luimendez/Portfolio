@@ -5095,7 +5095,7 @@ figcaption {
   background-size: cover;
 }
 .image-tiki.bewts.case {
-  background-image: url('../images/bewts.png');
+  background-image: url('../images/bewts-screen.png');
   background-position: 50%;
   background-size: contain;
 }
@@ -5137,10 +5137,10 @@ figcaption {
   .contact-form .contact-form-grid { grid-template-columns: 1fr; }
   .contact-form .contact-form-grid > div { grid-column: 1 / -1 !important; }
 }
-/* BEWTS card image already includes its own phone frame */
-.columns-2.bewts.case .phone-bezel-overlay, .columns-2.bewts.case .phone-glare { display: none; }
 /* Keep card titles from sitting under the text box on phones */
 @media screen and (max-width: 767px) {
   .div-block-20.bewts .project-title.bewts { position: relative; inset: auto; height: auto; padding: 10px 10px 0; font-size: 20px; text-align: center; }
   .div-block-20.bewts { flex-direction: column; align-items: stretch; }
 }
+
+.div-block-20.bewts.case .project-title { color: #fffbe6; text-shadow: 0 1px 2px rgba(0,0,0,.35); }

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Luis Mendez took a veteran peer-support concept from BEWTS into AlphaNation, a social product with a live interactive demo.">
+  <title>AlphaNation UX Engineering Case Study | Luis Mendez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/alphanation-case-study.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a href="index.html">← Portfolio</a>
+    <span>Luis Mendez</span>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="title">
+      <div>
+        <p class="label">UX engineering case study</p>
+        <h1 id="title">AlphaNation</h1>
+        <p class="lead">From veteran peer support to everyday connection.</p>
+        <p>BEWTS began with a question I brought from military leadership: how can reaching out to another person feel easier? AlphaNation is its natural successor. It brings that question into a social product people can use to build relationships over time.</p>
+        <dl class="metadata">
+          <div><dt>Role</dt><dd>Founder &amp; UX Engineer</dd></div>
+          <div><dt>Scope</dt><dd>Product strategy, interaction design, AI-assisted development</dd></div>
+        </dl>
+        <a class="button" href="https://alphanation.app/demo">Explore the live demo ↗</a>
+      </div>
+      <figure class="overview">
+        <figcaption class="label">Product overview</figcaption>
+        <dl>
+          <div><dt>Connect</dt><dd>Reach a network of opted-in peers</dd></div>
+          <div><dt>Circles</dt><dd>Build relationships in smaller communities</dd></div>
+          <div><dt>Home &amp; Lounge</dt><dd>Find reasons to participate from day one</dd></div>
+        </dl>
+      </figure>
+    </section>
+
+    <nav class="contents" aria-label="Case study sections">
+      <ul class="wrap">
+        <li><a href="#lineage">BEWTS lineage</a></li>
+        <li><a href="#decisions">Design decisions</a></li>
+        <li><a href="#engineering">Engineering</a></li>
+        <li><a href="#validation">Validation</a></li>
+      </ul>
+    </nav>
+
+    <section class="section wrap" id="lineage">
+      <p class="label">Historical project</p>
+      <h2>One interaction, a broader purpose</h2>
+      <div class="lineage">
+        <figure class="artifact">
+          <img src="images/Screenshot-219.png" alt="Original low-fidelity BEWTS mobile wireframes" width="1808" loading="lazy">
+          <figcaption>Original BEWTS wireframes from the portfolio.</figcaption>
+        </figure>
+        <div>
+          <h3>BEWTS explored reaching out</h3>
+          <p>Military service shaped the problem I wanted to solve. In BEWTS, a veteran could request an anonymous call with a network of peers, and the first person to answer would take the call. I documented the research, wireframes, and prototype in the original case study.</p>
+          <h3>AlphaNation explores showing up</h3>
+          <p>I carried forward the idea of reaching a group without choosing one person. AlphaNation expands the audience beyond veterans and adds spaces where people can get to know one another through everyday participation.</p>
+          <a href="bewts-case-study.html">Read the original BEWTS case study →</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="tint">
+      <section class="section wrap" id="decisions">
+        <h2>Three design decisions</h2>
+        <article class="story">
+          <div><p class="label">Connect</p><h3>Make the first step easier</h3></div>
+          <div>
+            <p>A direct call starts with a choice about who to contact. The Connect design replaces that choice with one request to eligible, opted-in peers. Separating circle membership from consent to receive requests gives people control over how they participate.</p>
+            <ol class="flow" aria-label="Conceptual Connect flow">
+              <li>Peers opt in</li><li>A member requests a call</li><li>The first available peer answers</li>
+            </ol>
+            <p class="caption">Conceptual flow. A two-person call and the unanswered-request state are open validation items for this case study.</p>
+          </div>
+        </article>
+        <article class="story">
+          <div><p class="label">Circles</p><h3>Give groups a say in how they run</h3></div>
+          <div>
+            <p>The demo shows ways to find and start a circle. The governance design asks how a circle can share responsibility as it grows. Elected councils would give members a say in who administers the group, and a wiki review flow would let members contribute while giving the group a way to review edits.</p>
+            <p class="caption">Circle discovery is visible in the demo. Election and wiki approval workflows need separate verification.</p>
+          </div>
+        </article>
+        <article class="story">
+          <div><p class="label">Home &amp; Lounge</p><h3>Give new members a place to start</h3></div>
+          <div>
+            <p>A feed based on member posts can feel empty before a circle becomes active. I designed recurring prompts and curated content to give members an immediate reason to explore. Home shows a Daily Question and Daily Code Word. Lounge gives people channels to browse and a Game Rankings section.</p>
+            <p class="caption">These surfaces are visible in the live demo. Their effect on return visits is an open question.</p>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <section class="section wrap" id="engineering">
+      <p class="label">Founder &amp; UX Engineer</p>
+      <h2>From product decisions to working software</h2>
+      <div class="columns">
+        <p>I defined the product direction, specified the interactions, and used AI-assisted development to turn those requirements into software I could evaluate. That let me consider how decisions fit together across the product, from how people find content to how they participate in a circle.</p>
+        <p>One example is the feed structure. I moved away from the earlier global-feed direction toward circle activity and curated channels. That decision gave Home and Lounge different jobs: Home gives members an entry point into daily participation, while Lounge gives them a place to explore by interest. The live demo lets visitors see both surfaces.</p>
+      </div>
+    </section>
+
+    <div class="tint">
+      <section class="section wrap" id="validation">
+        <h2>What the demo shows and what comes next</h2>
+        <dl class="evidence">
+          <div><dt>Demonstrated</dt><dd>Visitors can enter as a fictional member and explore Home, Circle discovery, and Lounge.</dd></div>
+          <div><dt>Historical</dt><dd>BEWTS documented the original anonymous first-to-answer concept, and AlphaNation’s product direction shifted away from a global public feed.</dd></div>
+          <div><dt>Designs to verify</dt><dd>End-to-end call behavior, including unanswered requests, plus council elections and wiki approvals.</dd></div>
+          <div><dt>Future validation</dt><dd>Test call completion and time to answer across devices. Measure how quickly a new member takes a meaningful action and whether they return.</dd></div>
+        </dl>
+        <a class="button" href="https://alphanation.app/demo">Explore the live demo ↗</a>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer wrap"><a href="index.html">← Back to portfolio</a><a href="bewts-case-study.html">Original BEWTS case study →</a></footer>
+</body>
+</html>

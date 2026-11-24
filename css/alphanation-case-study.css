@@ -35,6 +35,7 @@ a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
 
 .skip { position: absolute; top: .5rem; left: 1rem; padding: .5rem; background: var(--paper); transform: translateY(-160%); }
 .skip:focus { transform: translateY(0); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
 
 .site-header, .site-footer {
   display: flex;
@@ -97,8 +98,9 @@ dt { font-weight: 700; }
 .story { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1rem clamp(1.5rem, 6vw, 5rem); padding-block: 1.6rem; border-top: 1px solid var(--line); }
 .story p:first-child, .columns p:first-child, .columns p:last-child { margin-top: 0; }
 .story p:last-child { margin-bottom: 0; }
-.flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; padding-left: 1.4rem; }
-.flow li { padding: .6rem .55rem; background: var(--paper); border-radius: .3rem; }
+.flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; padding: 0; list-style: none; counter-reset: step; }
+.flow li { display: flex; gap: .5rem; padding: .6rem .75rem; background: var(--paper); border-radius: .3rem; counter-increment: step; }
+.flow li::before { content: counter(step) "."; color: var(--accent); font-weight: 700; }
 .evidence { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-bottom: 1.7rem; }
 .evidence div { padding: 1rem; border-top: 2px solid var(--accent); }
 

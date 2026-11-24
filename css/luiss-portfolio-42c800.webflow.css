@@ -5086,3 +5086,61 @@ figcaption {
 }
 
 
+
+/* Added after export: BEWTS case-study card and readability fixes */
+.columns-2.bewts.case {
+  background-image: url('../images/TROOPS-BG.jpg');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.image-tiki.bewts.case {
+  background-image: url('../images/bewts.png');
+  background-position: 50%;
+  background-size: contain;
+}
+.div-block-20.bewts.case {
+  background-image: linear-gradient(45deg, #8a9a7b, #c8c3a0);
+  border-color: #c8c3a0;
+}
+.case-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #ff6347;
+  font-weight: 700;
+  text-decoration: none;
+}
+.case-link:hover { text-decoration: underline; }
+.paragraph.about, .work-section, .container1.work, .project-description,
+.text-block-3, .text-block-13 {
+  text-align: left !important;
+}
+
+/* Contact form: shown above the footer */
+.contact-form {
+  display: block;
+  background-color: #fff;
+  padding: 80px 20px;
+  font-style: normal;
+}
+.contact-form .w-container { max-width: 720px; }
+.contact-form h2 { margin-top: 0; font-family: Montserrat, sans-serif; font-weight: 400; letter-spacing: 1px; }
+.contact-form label { font-family: Montserrat, sans-serif; font-weight: 600; font-size: 14px; }
+.contact-form .w-input { border-radius: 6px; min-height: 44px; font-size: 16px; }
+.contact-form textarea.w-input { min-height: 140px; }
+.contact-form .w-button {
+  margin-top: 24px; padding: 12px 32px; border-radius: 24px;
+  background-color: #ff6347; font-family: Montserrat, sans-serif; font-weight: 600; letter-spacing: 1px;
+}
+.contact-form .w-form-done, .contact-form .w-form-fail { border-radius: 6px; }
+@media screen and (max-width: 479px) {
+  .contact-form .contact-form-grid { grid-template-columns: 1fr; }
+  .contact-form .contact-form-grid > div { grid-column: 1 / -1 !important; }
+}
+/* BEWTS card image already includes its own phone frame */
+.columns-2.bewts.case .phone-bezel-overlay, .columns-2.bewts.case .phone-glare { display: none; }
+/* Keep card titles from sitting under the text box on phones */
+@media screen and (max-width: 767px) {
+  .div-block-20.bewts .project-title.bewts { position: relative; inset: auto; height: auto; padding: 10px 10px 0; font-size: 20px; text-align: center; }
+  .div-block-20.bewts { flex-direction: column; align-items: stretch; }
+}

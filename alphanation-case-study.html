@@ -16,7 +16,8 @@
   <link href="images/webclip.png" rel="apple-touch-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Fraunces:opsz,wght,SOFT@9..144,800,100&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap">
+  <link rel="preload" href="fonts/cooper-black-wordmark.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="css/alphanation-case-study.css">
 </head>
 <body>
@@ -27,7 +28,7 @@
     <div class="header-band">
       <div class="wrap header-row">
         <a class="pill pill-glass" href="index.html">← Portfolio</a>
-        <span class="wordmark header-wordmark" aria-hidden="true">AlphaNation</span>
+        <span class="brand" aria-hidden="true"><span class="emblem header-emblem"></span><span class="wordmark header-wordmark">AlphaNation</span></span>
         <span class="header-name">Luis Mendez</span>
       </div>
     </div>
@@ -40,6 +41,7 @@
     <section class="wrap hero" aria-labelledby="title">
       <div>
         <p class="chip">UX engineering case study</p>
+        <span class="emblem hero-emblem" role="img" aria-label="AlphaNation logo"></span>
         <h1 id="title" class="wordmark">AlphaNation</h1>
         <p class="tagline">Personal circles. Not crowds.</p>
         <p class="lead">A social platform built around the small groups people actually trust. Circles that govern themselves, a daily reason to show up, games to play together, and a real person one action away when it matters. I led it end to end, from product strategy to working software.</p>

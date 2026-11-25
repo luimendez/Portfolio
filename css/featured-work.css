@@ -151,3 +151,51 @@
   .work-section .columns-2.art-row { min-height: 800px; display: flex; flex-direction: column; justify-content: center; }
   .work-section .art-row-frame { width: 300px; margin: 28px auto; }
 }
+
+/* --- Row polish: every row gets the same 960x540 panel the phones overhang,
+   and every card is centred vertically on that panel. --- */
+@media screen and (min-width: 768px) {
+  .work-section .columns-2 > .column-4 {
+    top: 0;
+    min-height: 597px;
+    margin-top: 10px;
+    justify-content: center;
+  }
+  .work-section .columns-2.alpha > .column-4.alpha { top: 0; }
+  .work-section .columns-2 > .column-4 > .div-block-20 { position: relative; inset: auto; left: -40px; }
+
+  /* Alphanation and BEWTS used full-height backgrounds, so their phones sat
+     inside the panel instead of hanging over it. Move them to an inset panel. */
+  .work-section .columns-2.alphanation-row,
+  .work-section .columns-2.bewts.case {
+    position: relative;
+    background: none !important;
+    border-radius: 0;
+  }
+  .work-section .columns-2.alphanation-row::before,
+  .work-section .columns-2.bewts.case::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 38px 0;
+    z-index: 0;
+  }
+  .work-section .columns-2.alphanation-row::before {
+    background: linear-gradient(100deg, #f0d1a9, #c5cfcb 40%, #62aab9) center / cover,
+                url("../images/alphanation-wave-texture.jpg") center / cover no-repeat;
+    background-blend-mode: screen;
+    border-radius: 28px;
+  }
+  .work-section .columns-2.bewts.case::before {
+    background: url("../images/TROOPS-BG.jpg") 50% 50% / cover no-repeat;
+  }
+  .work-section .columns-2.alphanation-row > .w-col,
+  .work-section .columns-2.bewts.case > .w-col { position: relative; z-index: 1; }
+
+  /* Fine Art: a little larger, hanging further off the left edge */
+  .work-section .art-row-frame { width: min(560px, 50vw); margin-left: -70px; }
+}
+
+/* Glare sweeping across the painting, driven by the same mouse-move interaction */
+.work-section .art-row-frame { position: relative; overflow: hidden; }
+.work-section .art-row-frame .art-glare { width: 600px; height: 600px; opacity: .16; filter: blur(80px); pointer-events: none; }

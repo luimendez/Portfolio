@@ -1,10 +1,11 @@
-/* Featured Work: one card system for every project.
-   White card, the project's own gradient as a top band, a category label
-   above a left-aligned title, and text that sets the card's height. */
+/* Featured Work: the original colorful cards, made consistent.
+   Each card keeps its own gradient and title color; every card shares the
+   same structure: label and title at the top, a white rounded text box
+   below, links on their own row, and a height that fits the content. */
 
 .work-section .div-block-20.project-card {
-  --card-band: linear-gradient(90deg, #c5c3af, #969f97);
-  --card-ink: #4a524b;
+  --card-bg: linear-gradient(45deg, #c5c3af, #969f97);
+  --card-title: #fff;
   position: absolute;
   inset: 0 auto auto 0;
   width: 400px;
@@ -14,49 +15,44 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  padding: 0;
-  overflow: hidden;
-  text-align: left;
-  background: #fff;
-  border: 0;
+  padding: 0 10px 10px;
+  text-align: center;
+  background: var(--card-bg);
+  border: 2px solid rgba(255, 255, 255, .55);
   border-radius: 20px;
-  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, .45), 0 2px 6px rgba(0, 0, 0, .12);
-}
-
-.work-section .div-block-20.project-card::before {
-  content: "";
-  display: block;
-  flex: none;
-  height: 8px;
-  background: var(--card-band);
+  box-shadow: 0 2px 5px 4px rgba(0, 0, 0, .2);
 }
 
 .work-section .project-card .card-head {
-  padding: 20px 24px 0;
+  padding: 16px 12px 12px;
+  color: var(--card-title);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .3);
 }
 
 .work-section .project-card .card-eyebrow {
-  margin: 0 0 4px;
+  margin: 0 0 2px;
   font-size: 12px;
   font-weight: 700;
   line-height: 1.4;
-  letter-spacing: .12em;
+  letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--card-ink);
+  color: inherit;
+  opacity: .9;
 }
 
 .work-section .project-card .card-title {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   margin: 0;
   font-family: inherit;
   font-size: 26px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: 0;
-  text-align: left;
-  color: #1d1d1f;
+  text-align: center;
+  color: inherit;
 }
 
 .work-section .div-block-20.project-card .text-block-13 {
@@ -64,13 +60,13 @@
   inset: auto;
   display: block;
   margin: 0;
-  padding: 10px 24px 22px;
-  background: none;
-  border-radius: 0;
+  padding: 14px 18px 16px;
+  background: #fff;
+  border-radius: 14px;
   opacity: 1;
   font-size: 16px;
   line-height: 26px;
-  color: #3a3a3a;
+  color: #333;
   text-align: left !important;
 }
 
@@ -78,15 +74,16 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4px 20px;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
-/* Each project keeps its own colors */
-.work-section .project-card.card-alphanation { --card-band: linear-gradient(90deg, #e0a65c, #127991); --card-ink: #114b5f; }
-.work-section .project-card.card-mission { --card-band: linear-gradient(90deg, #98c48e, #4479a4); --card-ink: #2f5f86; }
-.work-section .project-card.card-bewts { --card-band: linear-gradient(90deg, #8a9a7b, #c8c3a0); --card-ink: #55634a; }
-.work-section .project-card.card-tiki { --card-band: linear-gradient(90deg, #50f9ff, #ff6347); --card-ink: #b03a26; }
-.work-section .project-card.card-store { --card-band: linear-gradient(90deg, #3d9eff, #faefb1); --card-ink: #1d63b0; }
+/* Each project's own colors, as in the original cards */
+.work-section .project-card.card-alphanation { --card-bg: linear-gradient(45deg, #e0a65c, #127991); --card-title: #fff; }
+.work-section .project-card.card-mission { --card-bg: linear-gradient(45deg, #98c48e, #4479a4); --card-title: #b3f8e6; }
+.work-section .project-card.card-bewts { --card-bg: linear-gradient(45deg, #8a9a7b, #c8c3a0); --card-title: #fffbe6; }
+.work-section .project-card.card-tiki { --card-bg: linear-gradient(45deg, #50f9ff, #ff6b50); --card-title: #fff; }
+.work-section .project-card.card-store { --card-bg: linear-gradient(225deg, #3d9eff, #faefb1); --card-title: #141c5a; }
+.work-section .project-card.card-store .card-head { text-shadow: 0 1px 1px rgba(255, 255, 255, .5); }
 
 /* Alphanation keeps its emblem and Cooper wordmark */
 .work-section .project-card .an-emblem {
@@ -94,14 +91,14 @@
   flex: none;
   width: 46px;
   aspect-ratio: 674 / 348;
-  background: linear-gradient(170deg, #84683a 0%, #304a5a 24%, #1b2e3f 62%, #234e57 100%);
+  background: #fff;
   -webkit-mask: url("../images/alphanation-emblem.png") center / contain no-repeat;
   mask: url("../images/alphanation-emblem.png") center / contain no-repeat;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .3));
 }
 .work-section .project-card .an-wordmark {
   font-family: "Cooper Black Wordmark", "Cooper Black", Georgia, serif;
   font-weight: 400;
-  color: #1b2e3f;
 }
 
 @media screen and (max-width: 767px) {
@@ -119,7 +116,6 @@
 }
 
 @media screen and (max-width: 479px) {
-  .work-section .div-block-20.project-card { margin: 12px 12px 0; }
-  .work-section .project-card .card-head { padding: 18px 18px 0; }
-  .work-section .div-block-20.project-card .text-block-13 { padding: 8px 18px 20px; }
+  .work-section .div-block-20.project-card { margin: 12px 12px 0; padding: 0 8px 8px; }
+  .work-section .div-block-20.project-card .text-block-13 { padding: 12px 14px 14px; }
 }

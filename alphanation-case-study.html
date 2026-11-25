@@ -3,121 +3,265 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="How Luis Mendez took a veteran peer-support concept from BEWTS into AlphaNation, a social product with a live interactive demo.">
   <title>AlphaNation UX Engineering Case Study | Luis Mendez</title>
+  <meta name="description" content="AlphaNation: a social platform built around personal circles. A UX engineering case study by Luis Mendez, founder and UX Engineer, from product strategy to working software.">
+  <meta property="og:title" content="AlphaNation UX Engineering Case Study | Luis Mendez">
+  <meta property="og:description" content="Personal circles. Not crowds. How I took AlphaNation from product strategy to working software.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://luimendez.github.io/Portfolio/alphanation-case-study.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#f2f6f7">
+  <link rel="canonical" href="https://luimendez.github.io/Portfolio/alphanation-case-study.html">
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Fraunces:opsz,wght,SOFT@9..144,800,100&display=swap">
   <link rel="stylesheet" href="css/alphanation-case-study.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <header class="site-header wrap">
-    <a href="index.html">← Portfolio</a>
-    <span>Luis Mendez</span>
-  </header>
-  <main id="main">
-    <section class="hero wrap" aria-labelledby="title">
-      <div>
-        <p class="label">UX engineering case study</p>
-        <h1 id="title">AlphaNation</h1>
-        <p class="lead">From veteran peer support to everyday connection.</p>
-        <p>BEWTS began with a question I brought from military leadership: how can reaching out to another person feel easier? AlphaNation is its natural successor. It brings that question into a social product people can use to build relationships over time.</p>
-        <dl class="metadata">
-          <div><dt>Role</dt><dd>Founder &amp; UX Engineer</dd></div>
-          <div><dt>Scope</dt><dd>Product strategy, interaction design, AI-assisted development</dd></div>
-        </dl>
-        <a class="button" href="https://alphanation.app/demo">Explore the live demo ↗</a>
+  <div class="glow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-band">
+      <div class="wrap header-row">
+        <a class="pill pill-glass" href="index.html">← Portfolio</a>
+        <span class="wordmark header-wordmark" aria-hidden="true">AlphaNation</span>
+        <span class="header-name">Luis Mendez</span>
       </div>
-      <figure class="overview">
-        <figcaption class="label">Product overview</figcaption>
-        <dl>
-          <div><dt>Connect</dt><dd>Reach a network of opted-in peers</dd></div>
-          <div><dt>Circles</dt><dd>Build relationships in smaller communities</dd></div>
-          <div><dt>Home &amp; Lounge</dt><dd>Find reasons to participate from day one</dd></div>
+    </div>
+    <svg class="header-arch" viewBox="0 0 1000 26" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M0,26 Q500,-26 1000,26 Z"></path>
+    </svg>
+  </header>
+
+  <main id="main">
+    <section class="wrap hero" aria-labelledby="title">
+      <div>
+        <p class="chip">UX engineering case study</p>
+        <h1 id="title" class="wordmark">AlphaNation</h1>
+        <p class="tagline">Personal circles. Not crowds.</p>
+        <p class="lead">A social platform built around the small groups people actually trust. Circles that govern themselves, a daily reason to show up, games to play together, and a real person one action away when it matters. I led it end to end, from product strategy to working software.</p>
+        <dl class="glass facts">
+          <div><dt>Role</dt><dd>Founder &amp; UX Engineer</dd></div>
+          <div><dt>Scope</dt><dd>Strategy, interaction design, AI-assisted build</dd></div>
+          <div><dt>Status</dt><dd>Working product, tested end to end</dd></div>
+          <div><dt>Timeline</dt><dd>March 2025 – present</dd></div>
         </dl>
-      </figure>
+        <div class="actions">
+          <a class="pill pill-primary" href="https://alphanation.app/demo" target="_blank" rel="noopener">Explore the live demo ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+          <a class="pill pill-glass" href="#scope">See the full scope</a>
+        </div>
+      </div>
+      <div class="phones">
+        <figure class="phone">
+          <div class="phone-screen">
+            <div class="shot">
+              <span class="shot-label"><strong>Home</strong>Daily Question, Code Word and circle posts</span>
+              <img src="images/alphanation-home.png" alt="AlphaNation Home with the Daily Question and circle posts" onerror="this.remove()">
+            </div>
+          </div>
+        </figure>
+        <figure class="phone phone-offset">
+          <div class="phone-screen">
+            <div class="shot">
+              <span class="shot-label"><strong>Connect</strong>One request to opted-in peers</span>
+              <img src="images/alphanation-connect.png" alt="AlphaNation Connect sending one request to opted-in peers" onerror="this.remove()">
+            </div>
+          </div>
+        </figure>
+      </div>
     </section>
 
-    <nav class="contents" aria-label="Case study sections">
-      <ul class="wrap">
-        <li><a href="#lineage">BEWTS lineage</a></li>
-        <li><a href="#decisions">Design decisions</a></li>
-        <li><a href="#engineering">Engineering</a></li>
-        <li><a href="#validation">Validation</a></li>
-      </ul>
-    </nav>
-
-    <section class="section wrap" id="lineage">
-      <p class="label">Historical project</p>
-      <h2>One interaction, a broader purpose</h2>
-      <div class="lineage">
-        <figure class="artifact">
-          <img src="images/Screenshot-219.png" alt="Original low-fidelity BEWTS mobile wireframes" width="1808" loading="lazy">
-          <figcaption>Original BEWTS wireframes from the portfolio.</figcaption>
-        </figure>
-        <div>
-          <h3>BEWTS explored reaching out</h3>
-          <p>Military service shaped the problem I wanted to solve. In BEWTS, a veteran could request an anonymous call with a network of peers, and the first person to answer would take the call. I documented the research, wireframes, and prototype in the original case study.</p>
-          <h3>AlphaNation explores showing up</h3>
-          <p>I carried forward the idea of reaching a group without choosing one person. AlphaNation expands the audience beyond veterans and adds spaces where people can get to know one another through everyday participation.</p>
-          <a href="bewts-case-study.html">Read the original BEWTS case study →</a>
+    <section class="wrap summary" aria-labelledby="summary-title">
+      <h2 id="summary-title" class="h-small">The 60-second version</h2>
+      <div class="grid-3">
+        <div class="glass arch-card">
+          <h3>The problem</h3>
+          <p>Social apps are built for crowds and attention. People need small circles they trust, a reason to visit every day, and an easy way to reach someone when it matters.</p>
+        </div>
+        <div class="glass arch-card">
+          <h3>What I did</h3>
+          <p>Founded the product and owned it end to end: strategy, interaction design across every surface, and an AI-assisted build I evaluated in working software.</p>
+        </div>
+        <div class="glass arch-card">
+          <h3>Where it stands</h3>
+          <p>Everything on this page is built, tested end to end and open to explore in a public demo. Next is measuring whether members come back.</p>
         </div>
       </div>
     </section>
 
-    <div class="tint">
-      <section class="section wrap" id="decisions">
-        <h2>Three design decisions</h2>
-        <article class="story">
-          <div><p class="label">Connect</p><h3>Make the first step easier</h3></div>
-          <div>
-            <p>A direct call starts with a choice about who to contact. The Connect design replaces that choice with one request to eligible, opted-in peers. Separating circle membership from consent to receive requests gives people control over how they participate.</p>
-            <ol class="flow" aria-label="Conceptual Connect flow">
-              <li>Peers opt in</li><li>A member requests a call</li><li>The first available peer answers</li>
-            </ol>
-            <p class="caption">Conceptual flow. A two-person call and the unanswered-request state are open validation items for this case study.</p>
-          </div>
-        </article>
-        <article class="story">
-          <div><p class="label">Circles</p><h3>Give groups a say in how they run</h3></div>
-          <div>
-            <p>The demo shows ways to find and start a circle. The governance design asks how a circle can share responsibility as it grows. Elected councils would give members a say in who administers the group, and a wiki review flow would let members contribute while giving the group a way to review edits.</p>
-            <p class="caption">Circle discovery is visible in the demo. Election and wiki approval workflows need separate verification.</p>
-          </div>
-        </article>
-        <article class="story">
-          <div><p class="label">Home &amp; Lounge</p><h3>Give new members a place to start</h3></div>
-          <div>
-            <p>A feed based on member posts can feel empty before a circle becomes active. I designed recurring prompts and curated content to give members an immediate reason to explore. Home shows a Daily Question and Daily Code Word. Lounge gives people channels to browse and a Game Rankings section.</p>
-            <p class="caption">These surfaces are visible in the live demo. Their effect on return visits is an open question.</p>
-          </div>
-        </article>
-      </section>
-    </div>
+    <nav class="wrap" aria-label="Case study sections">
+      <ul class="tabs">
+        <li><a href="#scope">Scope</a></li>
+        <li><a href="#decisions">Decisions</a></li>
+        <li><a href="#process">How I work</a></li>
+        <li><a href="#evidence">Evidence</a></li>
+      </ul>
+    </nav>
 
-    <section class="section wrap" id="engineering">
-      <p class="label">Founder &amp; UX Engineer</p>
-      <h2>From product decisions to working software</h2>
-      <div class="columns">
-        <p>I defined the product direction, specified the interactions, and used AI-assisted development to turn those requirements into software I could evaluate. That let me consider how decisions fit together across the product, from how people find content to how they participate in a circle.</p>
-        <p>One example is the feed structure. I moved away from the earlier global-feed direction toward circle activity and curated channels. That decision gave Home and Lounge different jobs: Home gives members an entry point into daily participation, while Lounge gives them a place to explore by interest. The live demo lets visitors see both surfaces.</p>
+    <section id="scope" class="wrap section" aria-labelledby="scope-title">
+      <h2 id="scope-title">One product, many connected parts</h2>
+      <p class="intro">Every part shares one idea: help people show up for each other. I designed how they fit together, so each one gives members a reason to use the others.</p>
+      <ul class="grid-3 areas">
+        <li class="glass area"><span class="medallion lake" aria-hidden="true">1</span><p class="kicker">Connect</p><h3>Reach a person</h3><p>One request to opted-in peers, voice calls, and scheduled circle calls.</p></li>
+        <li class="glass area"><span class="medallion lake" aria-hidden="true">2</span><p class="kicker">Community</p><h3>Circles</h3><p>Member-run groups with charters, elected councils, a shared wiki and circle-only posts.</p></li>
+        <li class="glass area"><span class="medallion amber" aria-hidden="true">3</span><p class="kicker">Everyday</p><h3>Home feed</h3><p>Circle activity, member posts and curated stories with the Daily Question, on flippable cards.</p></li>
+        <li class="glass area"><span class="medallion amber" aria-hidden="true">4</span><p class="kicker">Everyday</p><h3>Lounge</h3><p>Curated channels such as Good News, Sports, Vivid Earth, Comedy and Faith &amp; Wisdom, plus 100+ hobby guides, each crediting its source.</p></li>
+        <li class="glass area"><span class="medallion amber" aria-hidden="true">5</span><p class="kicker">Play</p><h3>Rec Room</h3><p>Daily Code Word, trivia, This or That, arcade games and rankings, also playable together during a call.</p></li>
+        <li class="glass area"><span class="medallion lake" aria-hidden="true">6</span><p class="kicker">Self</p><h3>Profiles &amp; journals</h3><p>Personal expression beyond a bio, plus private journals and direct messages.</p></li>
+        <li class="glass area"><span class="medallion lake" aria-hidden="true">7</span><p class="kicker">Access</p><h3>Try before joining</h3><p>Guests can browse public content, and a one-tap demo lets anyone explore as a fictional member.</p></li>
+        <li class="glass area"><span class="medallion amber" aria-hidden="true">8</span><p class="kicker">Operations</p><h3>Owner console</h3><p>A secure command center for moderation, member suspensions and system health.</p></li>
+        <li class="glass area"><span class="medallion amber" aria-hidden="true">9</span><p class="kicker">Assist</p><h3>AI, kept in check</h3><p>A buddy chat, journal insights and story retellings, always run on the server and never acting on accounts.</p></li>
+      </ul>
+    </section>
+
+    <section id="decisions" class="band section" aria-labelledby="decisions-title">
+      <div class="wrap">
+        <h2 id="decisions-title">Three decisions, start to finish</h2>
+        <p class="intro">Each card flips like a post in the app: the screen on the front, the reasoning on the back.</p>
+        <div class="grid-3 stories">
+
+          <article class="story" aria-labelledby="story-connect">
+            <p class="kicker">Connect</p>
+            <h3 id="story-connect">Make the first step easier</h3>
+            <div class="face front">
+              <div class="shot">
+                <span class="shot-label">Members choose which circles can reach them</span>
+                <img src="images/alphanation-connect-flow.png" alt="The Volunteer view, where members choose which circles can reach them" onerror="this.remove()">
+              </div>
+            </div>
+            <dl class="face back" id="back-connect">
+              <div><dt>Problem</dt><dd>Choosing exactly who to call adds friction at the moment reaching out is hardest.</dd></div>
+              <div><dt>Options considered</dt><dd>Call one chosen person; broadcast to everyone; or send one request to people who agreed to receive it.</dd></div>
+              <div><dt>Decision</dt><dd>One request goes to eligible, opted-in peers, and the first available person answers. Agreeing to receive requests is separate from joining a circle.</dd></div>
+              <div><dt>What I built</dt><dd>Per-circle availability, the request flow and live voice calls, tested end to end.</dd></div>
+              <div class="open"><dt>Still open</dt><dd>How quickly requests get answered as more members join, and what helps most when nobody is free.</dd></div>
+            </dl>
+            <button class="flip" type="button" aria-controls="back-connect" aria-expanded="false" hidden>See the reasoning ↻</button>
+          </article>
+
+          <article class="story" aria-labelledby="story-circles">
+            <p class="kicker">Circles</p>
+            <h3 id="story-circles">Give groups a say in how they run</h3>
+            <div class="face front">
+              <div class="shot">
+                <span class="shot-label">Inside a circle: calls, chat, hangouts and its wiki</span>
+                <img src="images/alphanation-circles.png" alt="Inside a circle: the Receive calls switch, group hangouts, Call a peer, Chat and the circle wiki" onerror="this.remove()">
+              </div>
+            </div>
+            <dl class="face back" id="back-circles">
+              <div><dt>Problem</dt><dd>In most group apps the founder holds all the power, even after the group outgrows them.</dd></div>
+              <div><dt>Options considered</dt><dd>A single admin; appointed moderators; or members electing a council.</dd></div>
+              <div><dt>Decision</dt><dd>Once a circle reaches 10 members it can adopt a charter and elect leads who act as its administrators. Members suggest wiki edits for the group to review.</dd></div>
+              <div><dt>What I built</dt><dd>Circle charters, council elections and a shared wiki with edit review.</dd></div>
+              <div class="open"><dt>Still open</dt><dd>Edge cases across an election, and how to prevent abuse of votes and edits.</dd></div>
+            </dl>
+            <button class="flip" type="button" aria-controls="back-circles" aria-expanded="false" hidden>See the reasoning ↻</button>
+          </article>
+
+          <article class="story" aria-labelledby="story-home">
+            <p class="kicker">Home &amp; Lounge</p>
+            <h3 id="story-home">Give new members a place to start</h3>
+            <div class="face front">
+              <div class="shot">
+                <span class="shot-label">Lounge channels, such as Comedy</span>
+                <img src="images/alphanation-lounge.png" alt="Lounge channels, starting with Comedy" onerror="this.remove()">
+              </div>
+            </div>
+            <dl class="face back" id="back-home">
+              <div><dt>Problem</dt><dd>A brand-new network has an empty feed, so there is no reason to come back.</dd></div>
+              <div><dt>Options considered</dt><dd>A global public feed; algorithmic discovery; or curated channels and daily prompts alongside circle posts.</dd></div>
+              <div><dt>Decision</dt><dd>Home mixes circle activity with curated channels and a Daily Question. The Lounge lets people browse by interest.</dd></div>
+              <div><dt>What I built</dt><dd>Lounge channels such as Good News, Sports and Fun Facts, the Daily Question, Daily Code Word and game rankings.</dd></div>
+              <div class="open"><dt>Still open</dt><dd>Whether this brings people back, and how to keep curated content relevant without crowding out circle posts.</dd></div>
+            </dl>
+            <button class="flip" type="button" aria-controls="back-home" aria-expanded="false" hidden>See the reasoning ↻</button>
+          </article>
+
+        </div>
       </div>
     </section>
 
-    <div class="tint">
-      <section class="section wrap" id="validation">
-        <h2>What the demo shows and what comes next</h2>
-        <dl class="evidence">
-          <div><dt>Demonstrated</dt><dd>Visitors can enter as a fictional member and explore Home, Circle discovery, and Lounge.</dd></div>
-          <div><dt>Historical</dt><dd>BEWTS documented the original anonymous first-to-answer concept, and AlphaNation’s product direction shifted away from a global public feed.</dd></div>
-          <div><dt>Designs to verify</dt><dd>End-to-end call behavior, including unanswered requests, plus council elections and wiki approvals.</dd></div>
-          <div><dt>Future validation</dt><dd>Test call completion and time to answer across devices. Measure how quickly a new member takes a meaningful action and whether they return.</dd></div>
-        </dl>
-        <a class="button" href="https://alphanation.app/demo">Explore the live demo ↗</a>
-      </section>
-    </div>
+    <section id="process" class="wrap section" aria-labelledby="process-title">
+      <h2 id="process-title">From product decisions to working software</h2>
+      <p class="intro">AI speeds up the build. The direction, the requirements and the judgment about what works stay with me.</p>
+      <ol class="steps">
+        <li><span class="step-n">01</span><strong>Intent</strong><span>The human problem and what success looks like.</span></li>
+        <li><span class="step-n">02</span><strong>Spec</strong><span>Interactions, states and rules, written down.</span></li>
+        <li><span class="step-n">03</span><strong>AI-assisted build</strong><span>Software built from the spec.</span></li>
+        <li><span class="step-n">04</span><strong>Evaluate</strong><span>Use it as a member and look for friction.</span></li>
+        <li><span class="step-n">05</span><strong>Iterate</strong><span>Change the spec, not just the screen.</span></li>
+      </ol>
+      <h3 class="h-small">Choices I would defend in a design review</h3>
+      <div class="grid-3">
+        <div class="glass principle"><h4>Consent is its own switch</h4><p>Joining a circle never signs you up for calls. Receiving requests is a separate opt-in you control.</p></div>
+        <div class="glass principle"><h4>Browse first, commit later</h4><p>Guests can read public content before signing up. Every action, from posting to reacting, needs an account.</p></div>
+        <div class="glass principle"><h4>Credit every source</h4><p>Curated channels link to the original publisher and credit each photographer, so the Lounge respects the work it shares.</p></div>
+      </div>
+      <p class="origins">Origins: the one-request idea behind Connect first appeared in my earlier concept, <a href="bewts-case-study.html">BEWTS</a>. AlphaNation is a separate and much larger product.</p>
+    </section>
+
+    <section id="evidence" class="band band-fade section" aria-labelledby="evidence-title">
+      <div class="wrap">
+        <h2 id="evidence-title">Built, tested, next</h2>
+        <div class="grid-3">
+          <div class="glass ledger built">
+            <h3>Built</h3>
+            <ul>
+              <li>Public demo with fictional members</li>
+              <li>Circles with charters, elections and wikis</li>
+              <li>Lounge channels, the Daily Question and Rec Room games</li>
+              <li>Owner console for moderation</li>
+            </ul>
+          </div>
+          <div class="glass ledger tested">
+            <h3>Tested</h3>
+            <ul>
+              <li>Two-person Connect calls, end to end</li>
+              <li>Circle charters, elections and wiki review</li>
+              <li>Home, Lounge channels and Rec Room games</li>
+            </ul>
+          </div>
+          <div class="glass ledger next">
+            <h3>Next</h3>
+            <ul>
+              <li>Call completion and time to answer</li>
+              <li>Time to a new member’s first meaningful action</li>
+              <li>Whether members return after 1, 7 and 30 days</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap closing" aria-labelledby="closing-title">
+      <div class="closing-card">
+        <h2 id="closing-title" class="wordmark">Personal circles. Not crowds.</h2>
+        <p>See it for yourself as a fictional member. No sign-up.</p>
+        <a class="pill pill-dark" href="https://alphanation.app/demo" target="_blank" rel="noopener">Explore the live demo ↗<span class="visually-hidden"> (opens in a new tab)</span></a>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer wrap"><a href="index.html">← Back to portfolio</a><a href="bewts-case-study.html">Original BEWTS case study →</a></footer>
+
+  <footer class="wrap site-footer">
+    <a href="index.html">← Back to portfolio</a>
+    <a href="#main">Back to top ↑</a>
+  </footer>
+
+  <script>
+    // Flip cards: without JavaScript both faces stay visible; with it, each card shows one face at a time.
+    document.querySelectorAll('.story').forEach(function (card) {
+      var button = card.querySelector('.flip');
+      card.classList.add('is-flippable');
+      button.hidden = false;
+      button.addEventListener('click', function () {
+        var flipped = card.classList.toggle('is-flipped');
+        button.setAttribute('aria-expanded', String(flipped));
+        button.textContent = flipped ? 'Show the screen ↺' : 'See the reasoning ↻';
+      });
+    });
+  </script>
 </body>
 </html>

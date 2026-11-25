@@ -1,0 +1,125 @@
+/* Featured Work: one card system for every project.
+   White card, the project's own gradient as a top band, a category label
+   above a left-aligned title, and text that sets the card's height. */
+
+.work-section .div-block-20.project-card {
+  --card-band: linear-gradient(90deg, #c5c3af, #969f97);
+  --card-ink: #4a524b;
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 400px;
+  height: auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+  background: #fff;
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, .45), 0 2px 6px rgba(0, 0, 0, .12);
+}
+
+.work-section .div-block-20.project-card::before {
+  content: "";
+  display: block;
+  flex: none;
+  height: 8px;
+  background: var(--card-band);
+}
+
+.work-section .project-card .card-head {
+  padding: 20px 24px 0;
+}
+
+.work-section .project-card .card-eyebrow {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--card-ink);
+}
+
+.work-section .project-card .card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-family: inherit;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-align: left;
+  color: #1d1d1f;
+}
+
+.work-section .div-block-20.project-card .text-block-13 {
+  position: static;
+  inset: auto;
+  display: block;
+  margin: 0;
+  padding: 10px 24px 22px;
+  background: none;
+  border-radius: 0;
+  opacity: 1;
+  font-size: 16px;
+  line-height: 26px;
+  color: #3a3a3a;
+  text-align: left !important;
+}
+
+.work-section .project-card .card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin-top: 12px;
+}
+
+/* Each project keeps its own colors */
+.work-section .project-card.card-alphanation { --card-band: linear-gradient(90deg, #e0a65c, #127991); --card-ink: #114b5f; }
+.work-section .project-card.card-mission { --card-band: linear-gradient(90deg, #98c48e, #4479a4); --card-ink: #2f5f86; }
+.work-section .project-card.card-bewts { --card-band: linear-gradient(90deg, #8a9a7b, #c8c3a0); --card-ink: #55634a; }
+.work-section .project-card.card-tiki { --card-band: linear-gradient(90deg, #50f9ff, #ff6347); --card-ink: #b03a26; }
+.work-section .project-card.card-store { --card-band: linear-gradient(90deg, #3d9eff, #faefb1); --card-ink: #1d63b0; }
+
+/* Alphanation keeps its emblem and Cooper wordmark */
+.work-section .project-card .an-emblem {
+  display: inline-block;
+  flex: none;
+  width: 46px;
+  aspect-ratio: 674 / 348;
+  background: linear-gradient(170deg, #84683a 0%, #304a5a 24%, #1b2e3f 62%, #234e57 100%);
+  -webkit-mask: url("../images/alphanation-emblem.png") center / contain no-repeat;
+  mask: url("../images/alphanation-emblem.png") center / contain no-repeat;
+}
+.work-section .project-card .an-wordmark {
+  font-family: "Cooper Black Wordmark", "Cooper Black", Georgia, serif;
+  font-weight: 400;
+  color: #1b2e3f;
+}
+
+@media screen and (max-width: 767px) {
+  .work-section .div-block-20.project-card {
+    position: relative;
+    inset: auto;
+    width: auto;
+    max-width: 400px;
+    height: auto;
+    margin: 16px auto 0;
+    border-radius: 20px;
+  }
+  .work-section .project-card .card-title { font-size: 22px; }
+  .work-section .div-block-20.project-card .text-block-13 { font-size: 15px; line-height: 24px; }
+}
+
+@media screen and (max-width: 479px) {
+  .work-section .div-block-20.project-card { margin: 12px 12px 0; }
+  .work-section .project-card .card-head { padding: 18px 18px 0; }
+  .work-section .div-block-20.project-card .text-block-13 { padding: 8px 18px 20px; }
+}

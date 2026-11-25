@@ -120,57 +120,32 @@
   .work-section .div-block-20.project-card .text-block-13 { padding: 12px 14px 14px; }
 }
 
-/* Fine Art link at the end of Featured Work */
-.work-section .art-feature {
-  display: flex;
-  align-items: stretch;
-  max-width: 940px;
-  margin: 60px auto 0;
-  overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, .55);
-  border-radius: 20px;
-  background: linear-gradient(45deg, #2b211a, #6b3a2a);
-  box-shadow: 0 2px 5px 4px rgba(0, 0, 0, .2);
-  color: #fff;
-  text-decoration: none;
+/* Fine Art row: same layout as the case-study rows. A brushwork panel in
+   the flamenco's colours sits behind, and the framed painting stands in
+   for the phone, hanging over the panel's top and bottom edges. */
+.work-section .columns-2.art-row {
+  position: relative;
+  background-image: none;
 }
-.work-section .art-feature-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  flex: 1 1 60%;
-  min-height: 220px;
+.work-section .columns-2.art-row::before {
+  display: block;
+  content: "";
+  position: absolute;
+  inset: 11% 0;
+  background: #3a2a1e url('../images/art-row-bg.jpg?v=5') 50% 50% / cover no-repeat;
 }
-.work-section .art-feature-strip img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .4s ease;
+.work-section .columns-2.art-row > .w-col { position: relative; z-index: 1; }
+.work-section .columns-2.art-row .phone { overflow: visible; }
+.work-section .project-card.card-art { --card-bg: linear-gradient(45deg, #e0a65c, #8f1d2a); --card-title: #fff; }
+.work-section .art-row-frame {
+  display: block;
+  width: min(400px, 44vw);
+  box-shadow: 0 26px 46px rgba(0, 0, 0, .6), 0 4px 10px rgba(0, 0, 0, .4);
+  transition: transform .3s ease;
 }
-.work-section .art-feature:hover .art-feature-strip img { transform: scale(1.04); }
-.work-section .art-feature-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1 1 40%;
-  gap: 6px;
-  padding: 24px 28px;
-  text-align: left;
-}
-.work-section .art-feature .card-eyebrow {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: #e0a65c;
-}
-.work-section .art-feature-title { font-size: 28px; font-weight: 700; line-height: 1.2; }
-.work-section .art-feature-body { font-size: 16px; line-height: 24px; color: rgba(255, 255, 255, .8); }
-.work-section .art-feature .case-link { margin-top: 6px; font-weight: 600; color: #fff; }
-
+.work-section .art-row-frame:hover { transform: translateY(-4px); }
+.work-section .art-row-frame img { display: block; width: 100%; height: auto; }
 @media screen and (max-width: 767px) {
-  .work-section .art-feature { flex-direction: column; max-width: 400px; margin: 40px auto 0; }
-  .work-section .art-feature-strip { min-height: 140px; }
-}
-@media screen and (max-width: 479px) {
-  .work-section .art-feature { margin: 32px 12px 0; }
+  .work-section .columns-2.art-row::before { inset: 0; background-image: url('../images/art-row-bg-tall.jpg?v=3'); }
+  .work-section .art-row-frame { width: 300px; margin: 28px auto; }
 }

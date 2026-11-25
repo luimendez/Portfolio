@@ -132,7 +132,7 @@
   content: "";
   position: absolute;
   inset: 11% 0;
-  background: #161318 url('../images/art-row-bg.jpg') 50% 50% / cover no-repeat;
+  background: #8a7350 url('../images/art-row-bg.jpg?v=3') 50% 50% / cover no-repeat;
 }
 .work-section .columns-2.art-row > .w-col { position: relative; z-index: 1; }
 .work-section .columns-2.art-row .phone { overflow: visible; }
@@ -146,6 +146,6 @@
 .work-section .art-row-frame:hover { transform: translateY(-4px); }
 .work-section .art-row-frame img { display: block; width: 100%; height: auto; }
 @media screen and (max-width: 767px) {
-  .work-section .columns-2.art-row::before { inset: 0; }
+  .work-section .columns-2.art-row::before { inset: 0; background-image: url('../images/art-row-bg-tall.jpg?v=1'); }
   .work-section .art-row-frame { width: 300px; margin: 28px auto; }
 }

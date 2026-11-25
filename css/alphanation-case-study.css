@@ -1,6 +1,14 @@
 /* AlphaNation case study, styled after the app's "Fuji Dawn" theme:
    glacier background, lake-teal primary, sunrise-amber accent, frosted glass,
    pill controls and arched card tops. */
+@font-face {
+  font-family: "Cooper Black Wordmark";
+  src: url("../fonts/cooper-black-wordmark.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
   --bg: #f2f6f7;
@@ -17,7 +25,10 @@
   --dawn-wash: linear-gradient(100deg, rgba(230, 178, 112, .78) 0%, rgba(206, 190, 150, .74) 22%, rgba(150, 168, 160, .72) 40%, rgba(110, 160, 165, .74) 55%, rgba(68, 145, 158, .8) 72%, rgba(14, 124, 147, .86) 88%, rgba(64, 148, 168, .82) 100%);
   --arch: 50% 50% 20px 20px / 22px 22px 20px 20px;
   --display: "Playfair Display", Georgia, serif;
-  --wordmark: Fraunces, "Cooper Black", Georgia, serif;
+  --wordmark: "Cooper Black Wordmark", "Cooper Black", Georgia, serif;
+  /* The app's glacial slate relief, used for the emblem and wordmark */
+  --emblem-fill: linear-gradient(170deg, #84683a 0%, #304a5a 24%, #1b2e3f 62%, #234e57 100%);
+  --emblem-relief: drop-shadow(0 -0.5px 0 rgba(249, 240, 222, .85)) drop-shadow(0 1px 0 rgba(15, 26, 36, .24)) drop-shadow(0 2px 2px rgba(28, 46, 62, .14));
 }
 
 * { box-sizing: border-box; }
@@ -59,7 +70,11 @@ a:hover { color: var(--lake-dark); }
 .skip { position: absolute; z-index: 10; top: .5rem; left: 1rem; padding: .6rem 1rem; border-radius: 999px; background: #fff; transform: translateY(-200%); }
 .skip:focus { transform: none; }
 
-.wordmark { font-family: var(--wordmark); font-variation-settings: "SOFT" 100; font-weight: 800; letter-spacing: -.02em; }
+.wordmark { font-family: var(--wordmark); font-weight: 400; letter-spacing: 0; color: #1b2e3f; background: var(--emblem-fill); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: var(--emblem-relief); }
+.emblem { display: block; aspect-ratio: 674 / 348; background: var(--emblem-fill); -webkit-mask: url("../images/alphanation-emblem.png") center / contain no-repeat; mask: url("../images/alphanation-emblem.png") center / contain no-repeat; filter: var(--emblem-relief); }
+.brand { display: inline-flex; align-items: center; gap: .6rem; }
+.header-emblem { width: 64px; }
+.hero-emblem { width: clamp(110px, 14vw, 150px); margin: .25rem 0 .75rem; }
 h2 { font-family: var(--display); font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-height: 1.08; }
 .h-small { font-family: var(--display); font-size: 1.75rem; margin-bottom: 1.25rem; }
 .intro { max-width: 62ch; margin: .9rem 0 2.5rem; color: var(--body); }
@@ -83,8 +98,8 @@ h2 { font-family: var(--display); font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-
 .site-header { position: relative; padding-bottom: 26px; }
 .header-band { background: var(--dawn-wash); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), 0 8px 18px -8px rgba(32, 64, 96, .2); }
 .header-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 72px; }
-.header-row .pill { min-height: 44px; padding: 0 1.1rem; font-size: .875rem; }
-.header-wordmark { font-size: 1.5rem; }
+.header-row .pill { min-height: 44px; padding: 0 1.1rem; font-size: .875rem; white-space: nowrap; }
+.header-wordmark { font-size: 1.5rem; line-height: 1; }
 .header-name { font-weight: 700; font-size: .875rem; }
 .header-arch { position: absolute; left: 0; bottom: 0; width: 100%; height: 26px; display: block; }
 .header-arch path { fill: rgba(110, 160, 165, .55); }
@@ -92,7 +107,7 @@ h2 { font-family: var(--display); font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-
 /* Hero */
 .hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 4rem; align-items: center; padding-block: 4.5rem 6rem; }
 .chip { display: inline-flex; margin-bottom: 1.1rem; padding: .35rem .9rem; border-radius: 999px; background: rgba(251, 253, 254, .6); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(207, 221, 226, .9); font-size: .8rem; font-weight: 700; color: var(--lake-dark); }
-.hero h1 { font-size: clamp(3.2rem, 7vw, 5.75rem); line-height: .98; }
+.hero h1 { font-size: clamp(3rem, 6.6vw, 5.4rem); line-height: 1.05; }
 .tagline { margin: 1rem 0 1.25rem; font-family: var(--display); font-weight: 700; font-size: clamp(1.5rem, 2.8vw, 2.1rem); line-height: 1.2; color: var(--lake); }
 .lead { max-width: 52ch; color: var(--body); }
 .facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin: 1.75rem 0; padding: 1.1rem 1.25rem; font-size: .875rem; line-height: 1.45; }
@@ -197,6 +212,8 @@ h2 { font-family: var(--display); font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-
   .hero { padding-block: 3rem 4rem; }
   .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .header-name { display: none; }
+  .header-emblem { width: 46px; }
+  .header-wordmark { font-size: 1.2rem; }
   .phones { gap: .75rem; }
   .phone-offset { margin-top: 36px; }
 }

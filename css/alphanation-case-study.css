@@ -95,14 +95,17 @@ h2 { font-family: var(--display); font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-
 .pill-dark:hover { color: #fff; background: #000; }
 
 /* Header: dawn wash with the app's arched bottom edge */
-/* The band itself curves down into a shallow arch, so the wash, its
-   highlight and its shadow all follow one continuous edge. */
-.site-header { position: relative; }
+/* The band's bottom edge rises into an arch, like the app's header: the
+   corners reach down, the centre lifts. A mask cuts the arch so the wash
+   and highlight follow it; the shadow comes from a drop-shadow on the
+   header so it follows the cut edge too. */
+.site-header { position: relative; filter: drop-shadow(0 10px 14px rgba(32, 64, 96, .18)); }
 .header-band {
   padding-bottom: 30px;
-  border-radius: 0 0 50% 50% / 0 0 30px 30px;
   background: var(--dawn-wash);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), inset 0 -1px 0 rgba(255, 255, 255, .55), 0 14px 28px -12px rgba(32, 64, 96, .28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9);
+  -webkit-mask: radial-gradient(ellipse 50.5% 30px at 50% 100%, transparent 98%, #000 100%);
+  mask: radial-gradient(ellipse 50.5% 30px at 50% 100%, transparent 98%, #000 100%);
 }
 .header-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 72px; }
 .header-row .pill { min-height: 44px; padding: 0 1.1rem; font-size: .875rem; white-space: nowrap; }
@@ -223,5 +226,5 @@ h2 { font-family: var(--display); font-size: clamp(2.1rem, 4.4vw, 3.4rem); line-
   .header-wordmark { font-size: 1.2rem; }
   .phones { gap: .75rem; }
   .phone-offset { margin-top: 36px; }
-  .header-band { padding-bottom: 20px; border-radius: 0 0 50% 50% / 0 0 20px 20px; }
+  .header-band { padding-bottom: 20px; -webkit-mask: radial-gradient(ellipse 50.5% 20px at 50% 100%, transparent 98%, #000 100%); mask: radial-gradient(ellipse 50.5% 20px at 50% 100%, transparent 98%, #000 100%); }
 }

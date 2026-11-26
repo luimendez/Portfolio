@@ -199,3 +199,36 @@
 /* Glare sweeping across the painting, driven by the same mouse-move interaction */
 .work-section .art-row-frame { position: relative; overflow: hidden; }
 .work-section .art-row-frame .art-glare { width: 600px; height: 600px; opacity: .16; filter: blur(80px); pointer-events: none; }
+
+/* Animation & VFX showreel row: same layout as the other rows, with the
+   original Instant Karma phone mockup; tapping it opens the full reel with sound. */
+.work-section .columns-2.reel-row { position: relative; background-image: none; }
+.work-section .columns-2.reel-row::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 38px 0;
+  background: #3b3a22 url('../images/acorn-bg.jpg') 50% 50% / cover no-repeat;
+}
+.work-section .columns-2.reel-row > .w-col { position: relative; z-index: 1; }
+.work-section .reel-row .image-tiki.karma { background-image: url('../images/karma-phone.png'); }
+/* Keep the moving glare inside the phone's outline instead of a rectangle */
+.work-section .reel-row .phone { -webkit-mask: url('../images/karma-phone.png') 50% 0 / auto 100% no-repeat; mask: url('../images/karma-phone.png') 50% 0 / auto 100% no-repeat; }
+.work-section .reel-phone-play { padding: 0; border: 0; background-color: transparent; cursor: pointer; }
+.work-section .reel-phone-play:focus-visible { outline: 3px solid #ffd166; outline-offset: -6px; }
+.work-section .project-card.card-reel { --card-bg: linear-gradient(45deg, #5b3a22, #8a6a3a 45%, #7f9a45); --card-title: #fff; }
+.work-section .reel-link { padding: 0; border: 0; background: none; font: inherit; cursor: pointer; }
+
+.reel-dialog { width: min(1100px, 94vw); max-width: none; padding: 0; border: 0; border-radius: 14px; overflow: visible; background: #000; }
+.reel-dialog::backdrop { background: rgba(0, 0, 0, .85); }
+.reel-dialog video { display: block; width: 100%; border-radius: 14px; }
+.reel-close {
+  position: absolute; top: -52px; right: 0; width: 44px; height: 44px; border: 0; border-radius: 50%;
+  background: rgba(255, 255, 255, .15); color: #fff; font-size: 26px; line-height: 44px; cursor: pointer;
+}
+.reel-close:hover { background: rgba(255, 255, 255, .3); }
+
+@media screen and (max-width: 767px) {
+  .work-section .columns-2.reel-row::before { inset: 0; background-position: 64% 50%; }
+  .reel-close { top: -50px; }
+}

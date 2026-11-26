@@ -208,7 +208,7 @@
   display: block;
   position: absolute;
   inset: 38px 0;
-  background: #17321f url('../images/animation-row-bg.jpg') 50% 50% / cover no-repeat;
+  background: #3b3a22 url('../images/acorn-bg.jpg') 50% 50% / cover no-repeat;
 }
 .work-section .columns-2.reel-row > .w-col { position: relative; z-index: 1; }
 .work-section .columns-2.reel-row .phone { overflow: visible; min-height: 597px; align-items: center; }
@@ -238,7 +238,7 @@
 .work-section .reel-play svg { width: 30px; height: 30px; margin-left: 4px; fill: #e2604a; }
 .work-section .reel-screen:hover .reel-play { transform: scale(1.08); background: #fff; }
 .work-section .reel-glare { width: 600px; height: 600px; opacity: .14; filter: blur(80px); pointer-events: none; }
-.work-section .project-card.card-reel { --card-bg: linear-gradient(45deg, #1f6f5c, #3d8f6a 45%, #e2876a); --card-title: #fff; }
+.work-section .project-card.card-reel { --card-bg: linear-gradient(45deg, #5b3a22, #8a6a3a 45%, #7f9a45); --card-title: #fff; }
 .work-section .reel-link { padding: 0; border: 0; background: none; font: inherit; cursor: pointer; }
 
 .reel-dialog { width: min(1100px, 94vw); max-width: none; padding: 0; border: 0; border-radius: 14px; overflow: visible; background: #000; }
@@ -251,7 +251,7 @@
 .reel-close:hover { background: rgba(255, 255, 255, .3); }
 
 @media screen and (max-width: 767px) {
-  .work-section .columns-2.reel-row::before { inset: 0; background-image: url('../images/animation-row-bg-tall.jpg'); }
+  .work-section .columns-2.reel-row::before { inset: 0; background-position: 64% 50%; }
   .work-section .columns-2.reel-row .phone { min-height: 0; }
   .work-section .columns-2.reel-row { min-height: 800px; display: flex; flex-direction: column; justify-content: center; }
   .work-section .reel-screen { width: min(340px, 90vw); margin: 28px auto; padding: 6px; }

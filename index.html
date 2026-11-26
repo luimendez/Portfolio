@@ -11,7 +11,7 @@
   <link href="css/normalize.css?v=3" rel="stylesheet" type="text/css">
   <link href="css/webflow.css?v=3" rel="stylesheet" type="text/css">
   <link href="css/luiss-portfolio-42c800.webflow.css?v=3" rel="stylesheet" type="text/css">
-  <link href="css/featured-work.css?v=21" rel="stylesheet" type="text/css">
+  <link href="css/featured-work.css?v=26" rel="stylesheet" type="text/css">
   <style>@media (min-width:992px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="c352324e-3dc6-7316-2be2-4f7f2aaf995c"] {width:4%;}html.w-mod-js:not(.w-mod-ix) [data-w-id="9ef973d6-c6a7-f13c-622d-1bf968a3ab83"] {width:4%;}}</style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -274,11 +274,8 @@
         <div data-w-id="e21f91f7-b2c2-495e-af10-25f3ac81f7ec" class="columns-2 reel-row w-row">
           <div class="column-3 w-col w-col-6">
             <div class="phone w-container">
-              <button type="button" class="reel-screen" data-reel-open aria-label="Play the animation and VFX showreel with sound">
-                <video src="videos/animation-showreel-preview.mp4?v=3" poster="images/animation-showreel-poster.jpg?v=3" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video>
-                <span class="reel-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
-                <span class="phone-glare reel-glare" aria-hidden="true"></span>
-              </button>
+              <button type="button" class="lightbox-link-4 reel-phone-play" data-reel-open aria-label="Play the animation and VFX showreel with sound"></button><img src="images/toppng.com-iphone-mockup-huawei-nova-2i-802x1598.png" loading="lazy" alt="Instant Karma animation: the pink bird on a branch" class="image-tiki karma"><img src="images/toppng.com-iphone-mockup-huawei-nova-2i-802x1598.png" loading="lazy" alt="" class="phone-bezel-overlay">
+              <div class="phone-glare"></div>
             </div>
           </div>
           <div class="column-4 w-col w-col-6">
@@ -289,7 +286,7 @@
           </div>
         </div>
         <dialog class="reel-dialog" aria-label="Animation and VFX showreel">
-          <video controls playsinline preload="none" poster="images/animation-showreel-poster.jpg">
+          <video controls playsinline preload="none" poster="images/animation-showreel-poster.jpg?v=3">
             <source src="videos/animation-showreel.mp4" type="video/mp4">
           </video>
           <button type="button" class="reel-close" aria-label="Close the showreel">&times;</button>
@@ -433,7 +430,7 @@
     d.addEventListener('click', function (e) { if (e.target === d) shut(); });
     d.addEventListener('close', function () { v.pause(); });
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      var pv = document.querySelector('.reel-screen video'); if (pv) { pv.removeAttribute('autoplay'); pv.pause(); }
+      
     }
   })();
   </script>

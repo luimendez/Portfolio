@@ -200,8 +200,8 @@
 .work-section .art-row-frame { position: relative; overflow: hidden; }
 .work-section .art-row-frame .art-glare { width: 600px; height: 600px; opacity: .16; filter: blur(80px); pointer-events: none; }
 
-/* Animation & VFX showreel row: same layout as the other rows. A widescreen
-   screen plays a short muted montage; tapping it opens the full reel with sound. */
+/* Animation & VFX showreel row: same layout as the other rows, with the
+   original Instant Karma phone mockup; tapping it opens the full reel with sound. */
 .work-section .columns-2.reel-row { position: relative; background-image: none; }
 .work-section .columns-2.reel-row::before {
   content: "";
@@ -211,33 +211,11 @@
   background: #3b3a22 url('../images/acorn-bg.jpg') 50% 50% / cover no-repeat;
 }
 .work-section .columns-2.reel-row > .w-col { position: relative; z-index: 1; }
-.work-section .columns-2.reel-row .phone { overflow: visible; min-height: 597px; align-items: center; }
-.work-section .reel-screen {
-  position: relative;
-  display: block;
-  width: min(560px, 50vw);
-  margin-left: -70px;
-  padding: 10px;
-  border: 0;
-  border-radius: 18px;
-  overflow: hidden;
-  background: #111;
-  cursor: pointer;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, .08), 0 26px 46px rgba(0, 0, 0, .55), 0 4px 10px rgba(0, 0, 0, .35);
-  transition: transform .3s ease;
-}
-.work-section .reel-screen:hover { transform: translateY(-4px); }
-.work-section .reel-screen:focus-visible { outline: 3px solid #ffd166; outline-offset: 4px; }
-.work-section .reel-screen video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 10px; object-fit: cover; background: #000; }
-.work-section .reel-play {
-  position: absolute; right: 26px; bottom: 26px; width: 60px; height: 60px;
-  display: grid; place-items: center; border-radius: 50%;
-  background: rgba(255, 255, 255, .9); box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
-  transition: transform .25s ease, background .25s ease;
-}
-.work-section .reel-play svg { width: 26px; height: 26px; margin-left: 4px; fill: #e2604a; }
-.work-section .reel-screen:hover .reel-play { transform: scale(1.08); background: #fff; }
-.work-section .reel-glare { width: 600px; height: 600px; opacity: .14; filter: blur(80px); pointer-events: none; }
+.work-section .reel-row .image-tiki.karma { background-image: url('../images/karma-phone.png'); }
+/* Keep the moving glare inside the phone's outline instead of a rectangle */
+.work-section .reel-row .phone { -webkit-mask: url('../images/karma-phone.png') 50% 0 / auto 100% no-repeat; mask: url('../images/karma-phone.png') 50% 0 / auto 100% no-repeat; }
+.work-section .reel-phone-play { padding: 0; border: 0; background-color: transparent; cursor: pointer; }
+.work-section .reel-phone-play:focus-visible { outline: 3px solid #ffd166; outline-offset: -6px; }
 .work-section .project-card.card-reel { --card-bg: linear-gradient(45deg, #5b3a22, #8a6a3a 45%, #7f9a45); --card-title: #fff; }
 .work-section .reel-link { padding: 0; border: 0; background: none; font: inherit; cursor: pointer; }
 
@@ -252,11 +230,5 @@
 
 @media screen and (max-width: 767px) {
   .work-section .columns-2.reel-row::before { inset: 0; background-position: 64% 50%; }
-  .work-section .columns-2.reel-row .phone { min-height: 0; }
-  .work-section .columns-2.reel-row { min-height: 800px; display: flex; flex-direction: column; justify-content: center; }
-  .work-section .reel-screen { width: min(340px, 90vw); margin: 28px auto; padding: 6px; }
-  .work-section .reel-play { right: 16px; bottom: 16px; width: 46px; height: 46px; }
-  .work-section .reel-play svg { width: 20px; height: 20px; }
   .reel-close { top: -50px; }
 }
-@media (prefers-reduced-motion: reduce) { .work-section .reel-screen, .work-section .reel-play { transition: none; } }

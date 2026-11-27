@@ -288,3 +288,9 @@
   .work-section .columns-2 > .column-4 { left: 0; top: -28px; }
   .work-section .columns-2 > .column-4 > .project-card { left: 0; width: min(420px, 100%); margin-left: auto; margin-right: auto; }
 }
+
+/* Tablets (768-991px): Webflow shifted the Alpha Nation Gear card 20px left
+   while every other card sits 76px right, so it overlapped its phone. */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .work-section .columns-2.alpha > .column-4.alpha { left: 76px; }
+}

@@ -11,7 +11,7 @@
   <link href="css/normalize.css?v=3" rel="stylesheet" type="text/css">
   <link href="css/webflow.css?v=3" rel="stylesheet" type="text/css">
   <link href="css/luiss-portfolio-42c800.webflow.css?v=3" rel="stylesheet" type="text/css">
-  <link href="css/featured-work.css?v=30" rel="stylesheet" type="text/css">
+  <link href="css/featured-work.css?v=31" rel="stylesheet" type="text/css">
   <style>@media (min-width:992px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="c352324e-3dc6-7316-2be2-4f7f2aaf995c"] {width:4%;}html.w-mod-js:not(.w-mod-ix) [data-w-id="9ef973d6-c6a7-f13c-622d-1bf968a3ab83"] {width:4%;}}</style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -393,7 +393,9 @@
     var rows = [].slice.call(document.querySelectorAll('.work [data-scroll-bg]'));
     if (!wrap || !rows.length) return;
     function rgb(r) { return r.getAttribute('data-scroll-bg').split(',').map(Number); }
-    var START = rgb(rows[0]);
+    var START = [43, 45, 49]; // charcoal, coming off the hero video
+    var heading = document.querySelector('.work .text-block-2');
+    var DARK = [29, 42, 58];
     function paint() {
       var mid = window.innerHeight / 2, top = wrap.getBoundingClientRect().top;
       var stops = [{ y: top, c: START }].concat(rows.map(function (r) {
@@ -411,6 +413,13 @@
         }
       }
       wrap.style.backgroundColor = 'rgb(' + c.join(',') + ')';
+      if (heading) {
+        // White or navy, whichever reads better on the current background.
+        var L = function (c) { return c.map(function (v) { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); })
+          .reduce(function (s, v, i) { return s + v * [0.2126, 0.7152, 0.0722][i]; }, 0); };
+        var bg = L(c), onWhite = 1.05 / (bg + 0.05), onNavy = (bg + 0.05) / (L(DARK) + 0.05);
+        heading.style.color = onWhite >= onNavy ? '#fff' : 'rgb(' + DARK.join(',') + ')';
+      }
     }
     var queued = false;
     function onScroll() { if (!queued) { queued = true; requestAnimationFrame(function () { queued = false; paint(); }); } }

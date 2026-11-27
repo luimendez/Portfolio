@@ -235,45 +235,6 @@
 
 /* ---------- Home page polish ---------- */
 
-/* Hero: a soft dark scrim behind the text keeps the white type readable
-   whether or not the background video has loaded. */
-.hero-video-wrapper::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-  background: linear-gradient(90deg, rgba(14, 22, 38, .45) 0%, rgba(14, 22, 38, .3) 45%, rgba(14, 22, 38, .08) 80%);
-}
-.hero .heading-h1,
-.hero .hero-tagline,
-.hero .button-text { text-shadow: 0 1px 3px rgba(0, 0, 0, .35); }
-.hero .button-text { font-weight: 700; }
-
-.hero-tagline {
-  margin: 4px 0 36px;
-  max-width: 760px;
-  color: #fff;
-  font-family: Montserrat, sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: .02em;
-  opacity: 0;
-  animation: hero-tagline-in .8s ease .7s forwards;
-}
-@keyframes hero-tagline-in {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-tagline { animation: none; opacity: 1; }
-}
-@media screen and (max-width: 479px) {
-  .hero .heading-h1 { align-self: flex-start; }
-  .hero-tagline { font-size: 16px; margin-bottom: 28px; }
-}
-
 /* Featured Work heading: dark on the light project colors */
 .work .text-block-2 { color: #1d2a3a; }
 

@@ -81,9 +81,12 @@
 .work-section .project-card.card-alphanation { --card-bg: linear-gradient(45deg, #e0a65c, #127991); --card-title: #fff; }
 .work-section .project-card.card-mission { --card-bg: linear-gradient(45deg, #98c48e, #4479a4); --card-title: #b3f8e6; }
 .work-section .project-card.card-bewts { --card-bg: linear-gradient(45deg, #8a9a7b, #c8c3a0); --card-title: #fffbe6; }
-.work-section .project-card.card-tiki { --card-bg: linear-gradient(45deg, #50f9ff, #ff6b50); --card-title: #fff; }
-.work-section .project-card.card-store { --card-bg: linear-gradient(225deg, #3d9eff, #faefb1); --card-title: #141c5a; }
-.work-section .project-card.card-store .card-head { text-shadow: 0 1px 1px rgba(255, 255, 255, .5); }
+/* Ask Tiki: tropical sunset, warm against the lagoon-blue page */
+.work-section .project-card.card-tiki { --card-bg: linear-gradient(160deg, #e2553a, #f2914a 50%, #ffd27a); --card-title: #fff; }
+.work-section .project-card.card-tiki .card-head { text-shadow: 0 1px 2px rgba(90, 30, 10, .45); }
+/* Alpha Nation Gear: deep denim, matching its row and standing off the coral page */
+.work-section .project-card.card-store { --card-bg: linear-gradient(225deg, #4d6b9a, #22355c); --card-title: #fff; }
+.work-section .project-card.card-store .card-head { text-shadow: 0 1px 2px rgba(0, 0, 0, .35); }
 
 /* Alphanation keeps its emblem and Cooper wordmark */
 .work-section .project-card .an-emblem {

@@ -371,7 +371,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 9, 8, .35) 0%, rgba(10, 9, 8, 0) 22%, rgba(10, 9, 8, 0) 70%, rgba(10, 9, 8, .7) 100%);
+  background: linear-gradient(180deg, rgba(10, 9, 8, .55) 0%, rgba(10, 9, 8, 0) 20%, rgba(10, 9, 8, 0) 62%, rgba(10, 9, 8, .85) 100%);
   pointer-events: none;
 }
 .medium-no {
@@ -383,6 +383,7 @@
   font-weight: 800;
   letter-spacing: .12em;
   color: var(--art-accent);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .8);
 }
 .medium-tag {
   position: absolute;
@@ -393,11 +394,12 @@
   font-size: .75rem;
   font-weight: 600;
   line-height: 1.35;
-  color: rgba(242, 237, 228, .9);
+  color: rgba(242, 237, 228, .95);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .85);
 }
 .medium-tag-detail {
   display: inline-block;
-  max-width: 5.5em;
+  max-width: 6.5em;
   overflow: hidden;
   white-space: nowrap;
   vertical-align: bottom;

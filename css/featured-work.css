@@ -232,3 +232,14 @@
   .work-section .columns-2.reel-row::before { inset: 0; background-position: 64% 50%; }
   .reel-close { top: -50px; }
 }
+
+/* ---------- Home page polish ---------- */
+
+/* Featured Work heading: dark on the light project colors */
+.work .text-block-2 { color: #1d2a3a; }
+
+/* Less empty space between projects */
+.work-section .columns-2 { margin-top: 145px; margin-bottom: 145px; }
+@media screen and (max-width: 767px) {
+  .work-section .columns-2 { margin-top: 70px; margin-bottom: 70px; }
+}

@@ -246,3 +246,45 @@
 @media screen and (max-width: 767px) {
   .work-section .columns-2 { margin-top: 70px; margin-bottom: 70px; }
 }
+
+/* Parsons, Ask Tiki and Alpha Nation Gear: each row's photo sits on its own
+   layer that always fills the row, the same way the Showreel and Fine Art rows
+   work, so no breakpoint swaps in another project's image or leaves a gap. */
+.work-section .columns-2.mission-row,
+.work-section .columns-2.tiki-row,
+.work-section .columns-2.alpha {
+  position: relative;
+  background-image: none !important;
+}
+.work-section .columns-2.mission-row::before,
+.work-section .columns-2.tiki-row::before,
+.work-section .columns-2.alpha::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 38px 0;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.work-section .columns-2.mission-row::before { background-color: #0b1a1c; background-image: url('../images/2cyber_piranha_innovation_graphic_hi.jpg'); }
+.work-section .columns-2.tiki-row::before { background-color: #6b6258; background-image: url('../images/driftwood-smaller-background-4.jpg'); }
+.work-section .columns-2.alpha::before { background-color: #2d3e5e; background-image: url('../images/bluecloth.jpg'); }
+.work-section .columns-2.mission-row > .w-col,
+.work-section .columns-2.tiki-row > .w-col,
+.work-section .columns-2.alpha > .w-col { position: relative; z-index: 1; }
+@media screen and (max-width: 767px) {
+  .work-section .columns-2.mission-row::before,
+  .work-section .columns-2.tiki-row::before,
+  .work-section .columns-2.alpha::before { inset: 0; }
+}
+
+/* Large phones and small tablets (480-767px): Webflow kept a squeezed
+   side-by-side layout here with the card pushed 164px right, so it ran off
+   narrower screens. Centre the phone and the card, as on smaller phones. */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .work-section .columns-2 { width: calc(100% - 40px); min-width: 0; max-width: 500px; }
+  .work-section .columns-2 > .column-3 .phone { left: 0; margin-left: auto; margin-right: auto; }
+  .work-section .columns-2 > .column-4 { left: 0; top: -28px; }
+  .work-section .columns-2 > .column-4 > .project-card { left: 0; width: min(420px, 100%); margin-left: auto; margin-right: auto; }
+}

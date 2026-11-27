@@ -278,3 +278,13 @@
   .work-section .columns-2.tiki-row::before,
   .work-section .columns-2.alpha::before { inset: 0; }
 }
+
+/* Large phones and small tablets (480-767px): Webflow kept a squeezed
+   side-by-side layout here with the card pushed 164px right, so it ran off
+   narrower screens. Centre the phone and the card, as on smaller phones. */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .work-section .columns-2 { width: calc(100% - 40px); min-width: 0; max-width: 500px; }
+  .work-section .columns-2 > .column-3 .phone { left: 0; margin-left: auto; margin-right: auto; }
+  .work-section .columns-2 > .column-4 { left: 0; top: -28px; }
+  .work-section .columns-2 > .column-4 > .project-card { left: 0; width: min(420px, 100%); margin-left: auto; margin-right: auto; }
+}

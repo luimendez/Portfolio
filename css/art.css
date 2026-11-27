@@ -306,3 +306,168 @@
   .art-facts { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .art-facts div:nth-child(2) { grid-column: 1 / -1; order: 3; }
 }
+
+/* ---------- Six mediums, one hand ---------- */
+.art-mediums {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 24px 72px;
+  scroll-margin-top: 24px;
+}
+.art-mediums-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(242, 237, 228, .12);
+}
+.art-mediums-head h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--art-text);
+}
+.art-mediums-head p {
+  max-width: 400px;
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.6;
+  color: var(--art-muted);
+}
+.medium-strip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* Hung slightly off-grid, like swatches pinned to a studio wall */
+.medium-strip li:nth-child(even) { transform: translateY(32px); }
+
+.medium { display: block; color: inherit; text-decoration: none; }
+.medium-img {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 5;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #0c0b0a;
+  box-shadow: 0 0 0 1px rgba(242, 237, 228, .12), 0 26px 50px rgba(0, 0, 0, .55);
+}
+.medium-img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity .7s ease, transform 1.4s cubic-bezier(.2, .7, .2, 1);
+}
+.medium-whole { opacity: 0; transform: scale(1.35); }
+.medium-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 9, 8, .35) 0%, rgba(10, 9, 8, 0) 22%, rgba(10, 9, 8, 0) 70%, rgba(10, 9, 8, .7) 100%);
+  pointer-events: none;
+}
+.medium-no {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  z-index: 1;
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  color: var(--art-accent);
+}
+.medium-tag {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+  z-index: 1;
+  font-size: .75rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: rgba(242, 237, 228, .9);
+}
+.medium-tag-detail {
+  display: inline-block;
+  max-width: 5.5em;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  padding-right: .3em;
+  color: var(--art-accent);
+}
+.medium-name {
+  display: block;
+  margin-top: 16px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--art-text);
+}
+.medium-note {
+  display: block;
+  margin-top: 4px;
+  font-size: .85rem;
+  color: var(--art-muted);
+}
+
+/* Hover or focus zooms out from the detail to the whole piece */
+@media (hover: hover) {
+  .medium:hover .medium-detail,
+  .medium:focus-visible .medium-detail { opacity: 0; transform: scale(.82); }
+  .medium:hover .medium-whole,
+  .medium:focus-visible .medium-whole { opacity: 1; transform: scale(1); }
+  .medium:hover .medium-tag-detail,
+  .medium:focus-visible .medium-tag-detail { opacity: 0; max-width: 0; padding-right: 0; }
+  .medium:hover .medium-name { color: var(--art-accent); }
+}
+.medium-tag-detail { transition: opacity .3s ease, max-width .45s ease, padding .45s ease; }
+.medium:focus-visible { outline: none; }
+.medium:focus-visible .medium-img { box-shadow: 0 0 0 2px var(--art-accent), 0 26px 50px rgba(0, 0, 0, .55); }
+
+/* The same texture, as a small swatch beside each piece's medium */
+.medium-dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background-size: 260%;
+  background-position: center;
+  vertical-align: -2px;
+  box-shadow: 0 0 0 1px rgba(242, 237, 228, .3);
+}
+
+/* Tablets and phones: a swipeable row of swatches */
+@media (max-width: 991px) {
+  .art-mediums-head { flex-direction: column; align-items: flex-start; gap: .75rem; }
+  .medium-strip {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(200px, 30%);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 0 -24px;
+    padding: 0 24px 12px;
+    scroll-padding: 0 24px;
+    scrollbar-width: none;
+  }
+  .medium-strip::-webkit-scrollbar { display: none; }
+  .medium-strip li { scroll-snap-align: start; }
+  .medium-strip li:nth-child(even) { transform: none; }
+  .art-mediums { padding-bottom: 40px; }
+}
+@media (max-width: 600px) {
+  .medium-strip { grid-auto-columns: 62%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .medium-img img, .medium-tag-detail { transition: none; }
+}

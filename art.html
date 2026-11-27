@@ -10,7 +10,7 @@
   <link href="css/normalize.css?v=3" rel="stylesheet" type="text/css">
   <link href="css/webflow.css?v=3" rel="stylesheet" type="text/css">
   <link href="css/luiss-portfolio-42c800.webflow.css?v=3" rel="stylesheet" type="text/css">
-  <link href="css/art.css?v=3" rel="stylesheet" type="text/css">
+  <link href="css/art.css?v=4" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -26,11 +26,11 @@
     <div>
       <p class="art-chip">Fine art portfolio</p>
       <h1>Fine Art</h1>
-      <p class="art-tagline">Made by hand. Paint, graphite, colored pencil, pastel and clay.</p>
+      <p class="art-tagline">Made by hand. Oil, acrylic, graphite, colored pencil, pastel and clay.</p>
       <p class="art-intro">The hands-on side of my creative work, where light, form and composition come first. Tap any piece to see it larger.</p>
       <dl class="art-facts">
         <div><dt>Role</dt><dd>Artist</dd></div>
-        <div><dt>Mediums</dt><dd>Paint, graphite, colored pencil, pastel, clay</dd></div>
+        <div><dt>Mediums</dt><dd>Oil, acrylic, graphite, colored pencil, pastel, clay</dd></div>
         <div><dt>Collection</dt><dd>9 works</dd></div>
       </dl>
       <div class="art-actions">
@@ -46,20 +46,32 @@
   </header>
   <section id="mediums" class="art-mediums" aria-labelledby="mediums-title">
     <div class="art-mediums-head">
-      <h2 id="mediums-title">Five mediums, one hand</h2>
+      <h2 id="mediums-title">Six mediums, one hand</h2>
       <p>Every piece here starts with a different material. These details, taken from the work itself, show each one up close.</p>
     </div>
     <ol class="medium-strip">
       <li>
         <a class="medium" href="#painting">
           <span class="medium-img">
-            <img class="medium-detail" src="images/medium-paint.jpg" width="440" height="733" loading="lazy" alt="Close-up of brushstrokes and canvas weave in a golden cloud, from the painting Garita">
-            <img class="medium-whole" src="images/art-garita-thumb.jpg" loading="lazy" alt="">
+            <img class="medium-detail" src="images/medium-oil.jpg" width="440" height="733" loading="lazy" alt="Close-up of layered oil paint in the red-trimmed ruffles of a flamenco dress, from the painting Flamenco">
+            <img class="medium-whole" src="images/art-flamenco-thumb.jpg" loading="lazy" alt="">
             <span class="medium-no" aria-hidden="true">01</span>
+            <span class="medium-tag"><span class="medium-tag-detail">Detail &middot;</span> Flamenco</span>
+          </span>
+          <span class="medium-name">Oil</span>
+          <span class="medium-note">On canvas &middot; 1 work</span>
+        </a>
+      </li>
+      <li>
+        <a class="medium" href="#painting">
+          <span class="medium-img">
+            <img class="medium-detail" src="images/medium-acrylic.jpg" width="440" height="733" loading="lazy" alt="Close-up of acrylic brushstrokes and canvas weave in a golden cloud, from the painting Garita">
+            <img class="medium-whole" src="images/art-garita-thumb.jpg" loading="lazy" alt="">
+            <span class="medium-no" aria-hidden="true">02</span>
             <span class="medium-tag"><span class="medium-tag-detail">Detail &middot;</span>Garita</span>
           </span>
-          <span class="medium-name">Paint</span>
-          <span class="medium-note">On canvas &middot; 4 works</span>
+          <span class="medium-name">Acrylic</span>
+          <span class="medium-note">On canvas &middot; 3 works</span>
         </a>
       </li>
       <li>
@@ -67,7 +79,7 @@
           <span class="medium-img">
             <img class="medium-detail" src="images/medium-graphite.jpg" width="440" height="733" loading="lazy" alt="Close-up of dense graphite shading and texture, from the drawing Underworld">
             <img class="medium-whole" src="images/art-surreal-thumb.jpg" loading="lazy" alt="">
-            <span class="medium-no" aria-hidden="true">02</span>
+            <span class="medium-no" aria-hidden="true">03</span>
             <span class="medium-tag"><span class="medium-tag-detail">Detail &middot;</span>Underworld</span>
           </span>
           <span class="medium-name">Graphite</span>
@@ -79,7 +91,7 @@
           <span class="medium-img">
             <img class="medium-detail" src="images/medium-colored-pencil.jpg" width="440" height="733" loading="lazy" alt="Close-up of layered colored pencil strokes on a figure and grassy hill, from Scallywags Hoedown">
             <img class="medium-whole" src="images/art-hoedown-thumb.jpg" loading="lazy" alt="">
-            <span class="medium-no" aria-hidden="true">03</span>
+            <span class="medium-no" aria-hidden="true">04</span>
             <span class="medium-tag"><span class="medium-tag-detail">Detail &middot;</span>Scallywags Hoedown</span>
           </span>
           <span class="medium-name">Colored pencil</span>
@@ -91,7 +103,7 @@
           <span class="medium-img">
             <img class="medium-detail" src="images/medium-pastel.jpg" width="440" height="733" loading="lazy" alt="Close-up of soft pastel fur strokes over textured paper, from Urban Primate">
             <img class="medium-whole" src="images/art-orangutan-thumb.jpg" loading="lazy" alt="">
-            <span class="medium-no" aria-hidden="true">04</span>
+            <span class="medium-no" aria-hidden="true">05</span>
             <span class="medium-tag"><span class="medium-tag-detail">Detail &middot;</span>Urban Primate</span>
           </span>
           <span class="medium-name">Pastel</span>
@@ -103,7 +115,7 @@
           <span class="medium-img">
             <img class="medium-detail" src="images/medium-clay.jpg" width="440" height="733" loading="lazy" alt="Close-up of a clay tentacle with suckers beside a sculpting tool, from Octopus">
             <img class="medium-whole" src="images/art-octopus-thumb.jpg" loading="lazy" alt="">
-            <span class="medium-no" aria-hidden="true">05</span>
+            <span class="medium-no" aria-hidden="true">06</span>
             <span class="medium-tag"><span class="medium-tag-detail">Detail &middot;</span>Octopus</span>
           </span>
           <span class="medium-name">Clay</span>
@@ -117,20 +129,20 @@
       <h2>Painting <span>4 pieces</span></h2>
       <div class="art-grid">
         <figure class="art-piece">
-          <button type="button" class="art-open" data-full="images/art-flamenco.jpg" data-title="Flamenco" data-meta="Paint on canvas, framed"><img src="images/art-flamenco-thumb.jpg" srcset="images/art-flamenco-thumb.jpg 800w, images/art-flamenco.jpg 2000w" sizes="(max-width: 767px) 100vw, 380px" width="800" height="564" loading="lazy" alt="Painting of a flamenco dancer in a black and red ruffled dress beside a black bull in a bullring"></button>
-          <figcaption><h3 class="art-title">Flamenco</h3><p class="art-meta"><span class="medium-dot" style="background-image:url(images/medium-paint.jpg)" aria-hidden="true"></span>Paint on canvas, framed</p><div class="art-extra portrait"><video src="videos/art-flamenco-room.mp4" poster="videos/art-flamenco-room-poster.jpg" width="720" height="1280" muted loop playsinline autoplay preload="metadata" aria-label="On the wall at home"></video><p>On the wall at home</p></div></figcaption>
+          <button type="button" class="art-open" data-full="images/art-flamenco.jpg" data-title="Flamenco" data-meta="Oil on canvas, framed"><img src="images/art-flamenco-thumb.jpg" srcset="images/art-flamenco-thumb.jpg 800w, images/art-flamenco.jpg 2000w" sizes="(max-width: 767px) 100vw, 380px" width="800" height="564" loading="lazy" alt="Painting of a flamenco dancer in a black and red ruffled dress beside a black bull in a bullring"></button>
+          <figcaption><h3 class="art-title">Flamenco</h3><p class="art-meta"><span class="medium-dot" style="background-image:url(images/medium-oil.jpg)" aria-hidden="true"></span>Oil on canvas, framed</p><div class="art-extra portrait"><video src="videos/art-flamenco-room.mp4" poster="videos/art-flamenco-room-poster.jpg" width="720" height="1280" muted loop playsinline autoplay preload="metadata" aria-label="On the wall at home"></video><p>On the wall at home</p></div></figcaption>
         </figure>
         <figure class="art-piece">
-          <button type="button" class="art-open" data-full="images/art-waterfall.jpg" data-title="Falls" data-meta="Paint"><img src="images/art-waterfall-thumb.jpg" srcset="images/art-waterfall-thumb.jpg 800w, images/art-waterfall.jpg 2000w" sizes="(max-width: 767px) 100vw, 380px" width="800" height="597" loading="lazy" alt="Painting of a forest waterfall pouring into a rocky stream with a fallen log"></button>
-          <figcaption><h3 class="art-title">Falls</h3><p class="art-meta"><span class="medium-dot" style="background-image:url(images/medium-paint.jpg)" aria-hidden="true"></span>Paint</p></figcaption>
+          <button type="button" class="art-open" data-full="images/art-waterfall.jpg" data-title="Falls" data-meta="Acrylic"><img src="images/art-waterfall-thumb.jpg" srcset="images/art-waterfall-thumb.jpg 800w, images/art-waterfall.jpg 2000w" sizes="(max-width: 767px) 100vw, 380px" width="800" height="597" loading="lazy" alt="Painting of a forest waterfall pouring into a rocky stream with a fallen log"></button>
+          <figcaption><h3 class="art-title">Falls</h3><p class="art-meta"><span class="medium-dot" style="background-image:url(images/medium-acrylic.jpg)" aria-hidden="true"></span>Acrylic</p></figcaption>
         </figure>
         <figure class="art-piece">
-          <button type="button" class="art-open" data-full="images/art-creation-hands.jpg" data-title="The Reach" data-meta="Paint on canvas, framed. Study after Michelangelo"><img src="images/art-creation-hands-thumb.jpg" srcset="images/art-creation-hands-thumb.jpg 800w, images/art-creation-hands.jpg 1859w" sizes="(max-width: 767px) 100vw, 380px" width="800" height="568" loading="lazy" alt="Painting of two hands reaching toward each other over a cracked gray plaster wall"></button>
-          <figcaption><h3 class="art-title">The Reach</h3><p class="art-meta"><span class="medium-dot" style="background-image:url(images/medium-paint.jpg)" aria-hidden="true"></span>Paint on canvas, framed. Study after Michelangelo</p></figcaption>
+          <button type="button" class="art-open" data-full="images/art-creation-hands.jpg" data-title="The Reach" data-meta="Acrylic on canvas, framed. Study after Michelangelo"><img src="images/art-creation-hands-thumb.jpg" srcset="images/art-creation-hands-thumb.jpg 800w, images/art-creation-hands.jpg 1859w" sizes="(max-width: 767px) 100vw, 380px" width="800" height="568" loading="lazy" alt="Painting of two hands reaching toward each other over a cracked gray plaster wall"></button>
+          <figcaption><h3 class="art-title">The Reach</h3><p class="art-meta"><span class="medium-dot" style="background-image:url(images/medium-acrylic.jpg)" aria-hidden="true"></span>Acrylic on canvas, framed. Study after Michelangelo</p></figcaption>
         </figure>
         <figure class="art-piece">
-          <button type="button" class="art-open" data-full="images/art-garita.jpg" data-title="Garita" data-meta="Paint on canvas"><img src="images/art-garita-thumb.jpg" srcset="images/art-garita-thumb.jpg 800w, images/art-garita.jpg 1980w" sizes="(max-width: 767px) 100vw, 380px" width="800" height="638" loading="lazy" alt="Painting of a domed stone sentry box on a fortress wall above a dark blue sea, under a sky of pink and gold clouds"></button>
-          <figcaption><h3 class="art-title">Garita</h3><p class="art-meta"><span class="medium-dot" style="background-image:url(images/medium-paint.jpg)" aria-hidden="true"></span>Paint on canvas</p></figcaption>
+          <button type="button" class="art-open" data-full="images/art-garita.jpg" data-title="Garita" data-meta="Acrylic on canvas"><img src="images/art-garita-thumb.jpg" srcset="images/art-garita-thumb.jpg 800w, images/art-garita.jpg 1980w" sizes="(max-width: 767px) 100vw, 380px" width="800" height="638" loading="lazy" alt="Painting of a domed stone sentry box on a fortress wall above a dark blue sea, under a sky of pink and gold clouds"></button>
+          <figcaption><h3 class="art-title">Garita</h3><p class="art-meta"><span class="medium-dot" style="background-image:url(images/medium-acrylic.jpg)" aria-hidden="true"></span>Acrylic on canvas</p></figcaption>
         </figure>
       </div>
     </section>

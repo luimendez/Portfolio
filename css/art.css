@@ -14,64 +14,6 @@
   font-family: Montserrat, Arial, sans-serif;
 }
 
-.art-back {
-  position: fixed;
-  top: 16px;
-  left: 16px;
-  z-index: 1000;
-  padding: 8px 14px;
-  border-radius: 20px;
-  background: rgba(0, 0, 0, .65);
-  color: #fff;
-  font: 600 14px/1.2 Montserrat, Arial, sans-serif;
-  text-decoration: none;
-}
-
-.art-header {
-  text-align: left;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 96px 24px 24px;
-}
-.art-eyebrow {
-  margin: 0 0 8px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--art-accent);
-}
-.art-header h1 {
-  margin: 0 0 16px;
-  font-size: 56px;
-  font-weight: 800;
-  line-height: 1.05;
-  color: var(--art-text);
-}
-.art-intro {
-  max-width: 620px;
-  margin: 0;
-  font-size: 17px;
-  line-height: 1.65;
-  color: var(--art-muted);
-}
-.art-jump {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 28px;
-}
-.art-jump a {
-  padding: 7px 14px;
-  border: 1px solid rgba(242, 237, 228, .25);
-  border-radius: 999px;
-  color: var(--art-text);
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-}
-.art-jump a:hover { border-color: var(--art-accent); color: var(--art-accent); }
-
 .art-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -208,103 +150,12 @@
 .art-lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
 
 @media (max-width: 767px) {
-  .art-header { padding-top: 80px; }
-  .art-header h1 { font-size: 40px; }
   .art-grid { grid-template-columns: 1fr; gap: 32px; }
   .art-lb-prev, .art-lb-next { top: auto; bottom: 16px; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .art-open img { transition: none; }
-}
-
-/* Hero: same structure as the case-study heroes (chip, title, tagline,
-   lead, facts card, actions, visual on the right) */
-.art-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: 4rem;
-  align-items: center;
-  max-width: 1200px;
-  padding: 104px 24px 56px;
-}
-.art-chip {
-  display: inline-flex;
-  margin: 0 0 1.1rem;
-  padding: .35rem .9rem;
-  border-radius: 999px;
-  background: rgba(242, 237, 228, .06);
-  box-shadow: inset 0 0 0 1px rgba(242, 237, 228, .18);
-  font-size: .8rem;
-  font-weight: 700;
-  color: var(--art-accent);
-}
-.art-hero h1 { font-size: clamp(3rem, 6.6vw, 5.4rem); }
-.art-tagline {
-  font-family: Montserrat, Arial, sans-serif;
-  margin: 1rem 0 1.25rem;
-  font-size: clamp(1.4rem, 2.6vw, 2rem);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--art-accent);
-}
-.art-facts {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin: 1.75rem 0;
-  padding: 1.1rem 1.25rem;
-  border-radius: 18px;
-  background: rgba(242, 237, 228, .05);
-  box-shadow: inset 0 0 0 1px rgba(242, 237, 228, .1), 0 18px 40px rgba(0, 0, 0, .35);
-  font-size: .875rem;
-  line-height: 1.45;
-}
-.art-facts dt { font-weight: 800; color: var(--art-text); }
-.art-facts dd { margin: .25rem 0 0; color: var(--art-muted); }
-.art-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
-.art-pill {
-  display: inline-flex;
-  align-items: center;
-  min-height: 48px;
-  padding: 0 1.5rem;
-  border-radius: 999px;
-  font-size: 1rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-.art-pill-primary { background: var(--art-accent); color: #1a140d; }
-.art-pill-primary:hover { background: #ebb876; }
-.art-pill-ghost { box-shadow: inset 0 0 0 1px rgba(242, 237, 228, .3); color: var(--art-text); }
-.art-pill-ghost:hover { box-shadow: inset 0 0 0 1px var(--art-accent); color: var(--art-accent); }
-.art-hero .art-jump { margin-top: 1.5rem; }
-
-/* Two works hung like the paired phones on the case studies */
-.art-hero-frames {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1.5rem;
-}
-.art-hero-frame {
-  margin: 0;
-  padding: 10px;
-  border-radius: 6px;
-  background: #0c0b0a;
-  box-shadow: 0 0 0 1px rgba(242, 237, 228, .12), 0 30px 60px rgba(0, 0, 0, .55);
-}
-.art-hero-frame:first-child { width: 58%; }
-.art-hero-frame-offset { width: 36%; margin-top: 4rem; }
-.art-hero-frame img { display: block; width: 100%; height: auto; border-radius: 2px; }
-
-@media (max-width: 991px) {
-  .art-hero { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; padding-top: 80px; }
-  .art-hero-frames { max-width: 560px; }
-}
-@media (max-width: 600px) {
-  .art-facts { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-  .art-facts div:nth-child(2) { grid-column: 1 / -1; order: 3; }
 }
 
 /* ---------- Six mediums, one hand ---------- */
@@ -472,4 +323,309 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .medium-img img, .medium-tag-detail { transition: none; }
+}
+
+/* =========================================================
+   Exhibition hero: a salon wall under a gallery spotlight
+   ========================================================= */
+:root {
+  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --wall: #191613;
+}
+
+/* Slim top bar replaces the floating back pill */
+.art-topbar {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 24px;
+  background: rgba(20, 19, 17, .72);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  backdrop-filter: saturate(140%) blur(14px);
+  box-shadow: 0 1px 0 rgba(242, 237, 228, .07);
+}
+.art-topbar-link {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--art-text);
+  text-decoration: none;
+  opacity: .85;
+  transition: color .2s ease, opacity .2s ease;
+}
+.art-topbar-link:hover, .art-topbar-link:focus-visible { color: var(--art-accent); opacity: 1; }
+.art-topbar-name {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: var(--art-muted);
+}
+
+.ex-hero {
+  --lx: 68%;
+  --ly: 38%;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, .74fr) minmax(0, 1.26fr);
+  grid-template-areas: "title salon" "body salon";
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(40px, 5vw, 80px);
+  align-items: end;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 112px 32px 72px;
+  box-sizing: border-box;
+  isolation: isolate;
+}
+/* The wall: full-bleed, warm, with a soft light that follows the cursor */
+.ex-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  background:
+    radial-gradient(560px circle at var(--lx) var(--ly), rgba(255, 228, 184, .085), transparent 62%),
+    radial-gradient(120% 90% at 70% 30%, #221e1a 0%, var(--wall) 55%, var(--art-bg) 100%);
+  transition: background-position .3s ease;
+}
+/* A hairline floor line where the wall meets the gallery */
+.ex-hero::after {
+  content: "";
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(242, 237, 228, .14) 20%, rgba(242, 237, 228, .14) 80%, transparent);
+}
+
+.ex-title-block { grid-area: title; }
+.ex-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 22px;
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--art-accent);
+}
+.ex-eyebrow::before { content: ""; width: 36px; height: 1px; background: currentColor; }
+.ex-hero h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(3.4rem, 7.2vw, 6.8rem);
+  font-weight: 500;
+  line-height: .94;
+  letter-spacing: -.015em;
+  color: var(--art-text);
+}
+.ex-hero h1 em {
+  display: block;
+  font-style: italic;
+  color: var(--art-accent);
+}
+
+.ex-body { grid-area: body; align-self: start; padding-top: 28px; }
+.ex-lede {
+  max-width: 26rem;
+  margin: 0 0 32px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--art-muted);
+}
+/* Museum placard: numerals in the display serif, labels in small caps */
+.ex-placard {
+  display: flex;
+  margin: 0 0 36px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(242, 237, 228, .14);
+  border-bottom: 1px solid rgba(242, 237, 228, .14);
+}
+.ex-placard div { flex: 1; padding: 0 20px; border-left: 1px solid rgba(242, 237, 228, .14); }
+.ex-placard div:first-child { padding-left: 0; border-left: 0; }
+.ex-placard dt {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--art-text);
+}
+.ex-placard dd {
+  margin: 8px 0 0;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--art-muted);
+}
+.ex-enter {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--art-text);
+  text-decoration: none;
+  transition: color .25s ease;
+}
+.ex-enter-text {
+  padding-bottom: 4px;
+  background: linear-gradient(var(--art-accent), var(--art-accent)) 0 100% / 100% 1px no-repeat;
+  transition: background-size .35s ease;
+}
+.ex-enter:hover, .ex-enter:focus-visible { color: var(--art-accent); }
+.ex-enter:hover .ex-enter-text, .ex-enter:focus-visible .ex-enter-text { background-size: 0 1px; background-position: 100% 100%; }
+.ex-enter-arrow {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgba(242, 237, 228, .3);
+  animation: ex-bob 2.4s ease-in-out infinite;
+}
+.ex-enter:hover .ex-enter-arrow { box-shadow: inset 0 0 0 1px var(--art-accent); }
+@keyframes ex-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+
+/* ---- The salon hang ---- */
+.ex-salon {
+  grid-area: salon;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.6%;
+}
+.ex-col { display: flex; flex-direction: column; gap: clamp(12px, 1.6vw, 20px); }
+.ex-col-1 { width: 27%; margin-top: 6%; }
+.ex-col-2 { width: 45%; }
+.ex-col-3 { width: 23%; margin-top: -4%; }
+
+.ex-piece {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  box-shadow: 0 22px 44px rgba(0, 0, 0, .55), 0 6px 14px rgba(0, 0, 0, .4);
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1), box-shadow .5s ease;
+  animation: ex-hang 1s cubic-bezier(.2, .7, .2, 1) backwards;
+  animation-delay: calc(var(--i) * 110ms + 200ms);
+}
+.ex-piece img { display: block; width: 100%; height: auto; }
+/* Works on paper: thin black frame with a cream mat */
+.ex-piece.is-paper { padding: 6px; background: #0b0a09; }
+.ex-piece.is-paper img { border: clamp(6px, .9vw, 12px) solid #ece5d8; box-sizing: border-box; }
+/* Unframed canvas: a gallery-wrap edge */
+.ex-piece.is-canvas { box-shadow: 3px 0 0 #0e0c0a, 0 22px 44px rgba(0, 0, 0, .55), 0 6px 14px rgba(0, 0, 0, .4); }
+/* Framed pieces are photographed in their own frames; a sculpture photo stays a print */
+.ex-piece.is-object img { border-radius: 2px; }
+
+/* Hover or focus: lift off the wall and reveal a museum label */
+.ex-label {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  max-width: calc(100% - 20px);
+  padding: 7px 10px;
+  border-radius: 2px;
+  background: rgba(245, 240, 231, .96);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .35);
+  color: #2a231b;
+  font-size: .7rem;
+  line-height: 1.35;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .3s ease, transform .3s ease;
+  pointer-events: none;
+}
+.ex-label strong { display: block; font-family: var(--serif); font-size: .9rem; font-weight: 600; color: #1a140d; }
+.ex-piece:hover, .ex-piece:focus-visible {
+  z-index: 2;
+  transform: translateY(-6px) scale(1.025);
+  box-shadow: 0 34px 64px rgba(0, 0, 0, .65), 0 10px 20px rgba(0, 0, 0, .45);
+  outline: none;
+}
+.ex-piece.is-canvas:hover, .ex-piece.is-canvas:focus-visible { box-shadow: 3px 0 0 #0e0c0a, 0 34px 64px rgba(0, 0, 0, .65), 0 10px 20px rgba(0, 0, 0, .45); }
+.ex-piece:focus-visible { box-shadow: 0 0 0 2px var(--art-accent), 0 34px 64px rgba(0, 0, 0, .65); }
+.ex-piece:hover .ex-label, .ex-piece:focus-visible .ex-label { opacity: 1; transform: none; }
+/* Dim the rest of the wall a touch while one piece is in focus */
+@media (hover: hover) {
+  .ex-salon:hover .ex-piece:not(:hover) { filter: brightness(.72); }
+  .ex-piece { transition: transform .5s cubic-bezier(.2, .7, .2, 1), box-shadow .5s ease, filter .4s ease; }
+}
+@keyframes ex-hang {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Mediums band and gallery headings speak in the same serif */
+.art-mediums-head h2,
+.art-section h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -.01em;
+}
+.art-mediums-head h2 em { font-style: italic; color: var(--art-accent); }
+.art-section h2 { font-size: 2rem; }
+.art-mediums { padding-top: 56px; }
+.art-mediums-head { border-top: 0; padding-top: 0; }
+
+/* Tablet and phone: title, then the wall, then the details */
+@media (max-width: 991px) {
+  .ex-hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "title" "salon" "body";
+    grid-template-rows: auto;
+    row-gap: 40px;
+    min-height: 0;
+    padding: 104px 24px 56px;
+  }
+  .ex-salon { width: 100%; max-width: 640px; justify-self: center; }
+  .ex-body { padding-top: 0; }
+  .ex-lede { max-width: 34rem; }
+  .ex-hero::after { left: 24px; right: 24px; }
+}
+@media (max-width: 600px) {
+  .art-topbar { padding: 0 16px; }
+  .art-topbar-name { display: none; }
+  .ex-hero { padding: 92px 20px 48px; row-gap: 32px; }
+  .ex-hero h1 { font-size: clamp(3rem, 15vw, 4.2rem); }
+  .ex-eyebrow { margin-bottom: 16px; }
+  .ex-placard dt { font-size: 2rem; }
+  .ex-placard div { padding: 0 14px; }
+  .ex-label { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ex-piece { animation: none; transition: none; }
+  .ex-piece:hover, .ex-piece:focus-visible { transform: none; }
+  .ex-enter-arrow { animation: none; }
+}
+
+/* One column grid for the whole page, aligned with the hero */
+.art-mediums,
+.art-section { max-width: 1280px; padding-left: 32px; padding-right: 32px; box-sizing: border-box; }
+@media (max-width: 991px) {
+  .art-mediums, .art-section { padding-left: 24px; padding-right: 24px; }
+}
+@media (max-width: 600px) {
+  .art-mediums, .art-section { padding-left: 20px; padding-right: 20px; }
+}
+@media (max-width: 600px) {
+  .medium-strip { margin: 0 -20px; padding: 0 20px 12px; scroll-padding: 0 20px; }
 }

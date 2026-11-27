@@ -239,7 +239,7 @@
 /* ---------- Home page polish ---------- */
 
 /* Featured Work heading: dark on the light project colors */
-.work .text-block-2 { color: #1d2a3a; }
+.work .text-block-2 { color: #1d2a3a; transition: color .35s ease; }
 
 /* Less empty space between projects */
 .work-section .columns-2 { margin-top: 145px; margin-bottom: 145px; }

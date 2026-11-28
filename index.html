@@ -11,7 +11,7 @@
   <link href="css/normalize.css?v=3" rel="stylesheet" type="text/css">
   <link href="css/webflow.css?v=3" rel="stylesheet" type="text/css">
   <link href="css/luiss-portfolio-42c800.webflow.css?v=3" rel="stylesheet" type="text/css">
-  <link href="css/featured-work.css?v=37" rel="stylesheet" type="text/css">
+  <link href="css/featured-work.css?v=38" rel="stylesheet" type="text/css">
   <link href="css/demo-qr.css?v=4" rel="stylesheet" type="text/css">
   <style>@media (min-width:992px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="c352324e-3dc6-7316-2be2-4f7f2aaf995c"] {width:4%;}html.w-mod-js:not(.w-mod-ix) [data-w-id="9ef973d6-c6a7-f13c-622d-1bf968a3ab83"] {width:4%;}}</style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -186,7 +186,7 @@
             </div>
           </div>
         </div>
-        <dialog class="reel-dialog" data-reel="tiki" aria-label="Ask Tiki video">
+        <dialog tabindex="-1" class="reel-dialog" data-reel="tiki" aria-label="Ask Tiki video">
           <video controls playsinline preload="none" poster="images/ask-tiki-poster.jpg">
             <source src="videos/ask-tiki.mp4" type="video/mp4">
           </video>
@@ -206,7 +206,7 @@
             </div>
           </div>
         </div>
-        <dialog class="reel-dialog" data-reel="showreel" aria-label="Animation and VFX showreel">
+        <dialog tabindex="-1" class="reel-dialog" data-reel="showreel" aria-label="Animation and VFX showreel">
           <video controls playsinline preload="none" poster="images/animation-showreel-poster.jpg?v=4">
             <source src="videos/animation-showreel.mp4?v=26" type="video/mp4">
           </video>
@@ -349,7 +349,7 @@
       if (!d.showModal) return;
       var v = d.querySelector('video');
       document.querySelectorAll('[data-reel-open="' + d.dataset.reel + '"]').forEach(function (b) {
-        b.addEventListener('click', function () { d.showModal(); v.currentTime = 0; var p = v.play(); if (p && p.catch) p.catch(function () {}); });
+        b.addEventListener('click', function () { d.showModal(); d.focus({ preventScroll: true }); v.currentTime = 0; var p = v.play(); if (p && p.catch) p.catch(function () {}); });
       });
       function shut() { v.pause(); d.close(); }
       d.querySelector('.reel-close').addEventListener('click', shut);

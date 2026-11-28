@@ -1,77 +1,84 @@
-/* "Best on your phone": a QR pop-up beside the Alphanation demo links.
-   Desktop only; on phones and touch screens the demo link already works. */
-.demo-qr { display: inline-flex; }
-.demo-qr-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  font: inherit;
+/* Alphanation demo: built for touch, so on desktop the demo button opens a
+   QR code to continue on a phone, with a quiet option to stay in the browser. */
+
+/* Button labels: desktop vs phone/touch */
+[data-demo-qr] .dq-desktop { display: none; align-items: center; gap: 7px; }
+[data-demo-qr] .dq-desktop svg { width: 15px; height: 15px; flex: none; }
+@media (hover: hover) and (min-width: 768px) {
+  [data-demo-qr] .dq-desktop { display: inline-flex; }
+  [data-demo-qr] .dq-mobile { display: none; }
 }
-.demo-qr-toggle svg { width: 14px; height: 14px; flex: none; }
-/* Home page card: matches the card's text links */
-.card-links .demo-qr-toggle {
+
+/* The window */
+.demo-qr-modal {
+  width: min(380px, calc(100vw - 32px));
+  max-width: none;
   padding: 0;
   border: 0;
-  background: none;
-  color: #0f6b80;
-  font-weight: 700;
-  font-size: inherit;
-}
-.card-links .demo-qr-toggle:hover,
-.card-links .demo-qr-toggle[aria-expanded="true"] { color: #0b4e5e; text-decoration: underline; text-underline-offset: 3px; }
-
-.demo-qr-pop {
-  position: fixed;
-  z-index: 3000;
-  width: 208px;
-  padding: 16px 16px 14px;
-  box-sizing: border-box;
-  border-radius: 18px;
+  border-radius: 24px;
   background: #fff;
-  box-shadow: 0 18px 48px rgba(11, 40, 50, .28), 0 2px 6px rgba(11, 40, 50, .12);
-  font-family: "Plus Jakarta Sans", Montserrat, system-ui, sans-serif;
-  text-align: center;
   color: #13303a;
-  opacity: 0;
-  transform: translateY(6px) scale(.98);
-  transition: opacity .18s ease, transform .18s ease;
-  pointer-events: none;
+  box-shadow: 0 30px 80px rgba(8, 32, 40, .35);
+  font-family: "Plus Jakarta Sans", Montserrat, system-ui, sans-serif;
+  overflow: visible;
 }
-.demo-qr-pop.is-open { opacity: 1; transform: none; pointer-events: auto; }
-.demo-qr-pop.is-below { transform-origin: top center; }
-.demo-qr-pop::after {
-  content: "";
-  position: absolute;
-  left: var(--arrow-x, 50%);
-  bottom: -6px;
-  width: 12px;
-  height: 12px;
-  margin-left: -6px;
-  background: #fff;
-  transform: rotate(45deg);
-  border-radius: 2px;
-}
-.demo-qr-pop.is-below::after { bottom: auto; top: -6px; }
-.demo-qr-pop img { display: block; width: 160px; height: 160px; margin: 0 auto 10px; }
-.demo-qr-title { display: block; font-size: 14px; font-weight: 800; letter-spacing: -.01em; }
-.demo-qr-text { display: block; margin-top: 3px; font-size: 12.5px; line-height: 1.45; color: #4d6670; }
-
-@media (hover: none), (max-width: 767px) {
-  .demo-qr { display: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .demo-qr-pop { transition: none; }
-}
-/* Case study hero: a quiet text link beside the pills */
-.actions .demo-qr { align-self: center; }
-.demo-qr-link {
-  padding: 8px 4px;
-  border: 0;
-  background: none;
+.demo-qr-modal::backdrop { background: rgba(8, 26, 32, .55); backdrop-filter: blur(4px); }
+.demo-qr-modal[open] { animation: dq-in .22s ease-out; }
+@keyframes dq-in { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+.dq-body { padding: 30px 30px 24px; text-align: center; }
+.dq-eyebrow {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
   color: #0f6b80;
-  font-size: 14px;
-  font-weight: 700;
 }
-.demo-qr-link:hover, .demo-qr-link[aria-expanded="true"] { color: #0b4e5e; text-decoration: underline; text-underline-offset: 3px; }
-.demo-qr-link:focus-visible, .card-links .demo-qr-toggle:focus-visible { outline: 2px solid #0f6b80; outline-offset: 3px; border-radius: 6px; }
+.dq-title { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; }
+.dq-code {
+  display: block;
+  width: 232px;
+  height: 232px;
+  margin: 20px auto 16px;
+  border-radius: 18px;
+  box-shadow: 0 0 0 1px #e1eaec;
+}
+.dq-text { margin: 0 auto; max-width: 280px; font-size: 14px; line-height: 1.55; color: #4d6670; }
+.dq-url { display: block; margin-top: 8px; font-size: 13px; font-weight: 700; color: #0f6b80; letter-spacing: .01em; }
+.dq-fallback {
+  display: block;
+  padding: 14px 20px 18px;
+  border-top: 1px solid #e8eff1;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  color: #4d6670;
+  text-decoration: none;
+  border-radius: 0 0 24px 24px;
+}
+.dq-fallback:hover, .dq-fallback:focus-visible { color: #0b4e5e; text-decoration: underline; text-underline-offset: 3px; }
+.dq-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #f0f5f6;
+  color: #13303a;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.dq-close:hover { background: #e1eaec; }
+.dq-close:focus-visible, .dq-fallback:focus-visible { outline: 2px solid #0f6b80; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  .demo-qr-modal[open] { animation: none; }
+}
+.demo-qr-modal .visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}

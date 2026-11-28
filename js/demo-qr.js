@@ -1,52 +1,43 @@
-// "Best on your phone" QR pop-up. Opens on hover or click, positions itself
-// in the viewport (so rounded cards can't clip it), closes on Escape or outside click.
+// Alphanation demo: on desktop, demo buttons open a QR code to continue on a
+// phone (the app is built for touch and swipe). Phones open the demo directly.
 (function () {
-  document.querySelectorAll('.demo-qr').forEach(function (wrap) {
-    var btn = wrap.querySelector('.demo-qr-toggle');
-    var pop = wrap.querySelector('.demo-qr-pop');
-    if (!btn || !pop) return;
-    document.body.appendChild(pop);           // escape any overflow:hidden parent
-    var pinned = false, hideTimer = 0;
+  var links = document.querySelectorAll('[data-demo-qr]');
+  if (!links.length || typeof HTMLDialogElement === 'undefined') return;
+  var desktop = window.matchMedia('(hover: hover) and (min-width: 768px)');
+  var url = links[0].href;
+  var shortUrl = url.replace(/^https?:\/\//, '');
 
-    function place() {
-      var r = btn.getBoundingClientRect(), w = pop.offsetWidth, h = pop.offsetHeight, gap = 12;
-      var left = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), window.innerWidth - w - 8);
-      var below = r.top - h - gap < 8;
-      pop.classList.toggle('is-below', below);
-      pop.style.left = left + 'px';
-      pop.style.top = (below ? r.bottom + gap : r.top - h - gap) + 'px';
-      pop.style.setProperty('--arrow-x', (r.left + r.width / 2 - left) + 'px');
-    }
-    function open() {
-      clearTimeout(hideTimer);
-      pop.hidden = false;
-      place();
-      pop.classList.add('is-open');
-      btn.setAttribute('aria-expanded', 'true');
-    }
-    function close() {
-      pinned = false;
-      pop.classList.remove('is-open');
-      btn.setAttribute('aria-expanded', 'false');
-      hideTimer = setTimeout(function () { pop.hidden = true; }, 200);
-    }
-    function softClose() { if (!pinned) hideTimer = setTimeout(close, 180); }
+  var dlg = document.createElement('dialog');
+  dlg.className = 'demo-qr-modal';
+  dlg.setAttribute('aria-labelledby', 'dq-title');
+  dlg.innerHTML =
+    '<button type="button" class="dq-close" aria-label="Close">&times;</button>' +
+    '<div class="dq-body">' +
+      '<p class="dq-eyebrow">Alphanation demo</p>' +
+      '<h2 class="dq-title" id="dq-title">Try it on your phone</h2>' +
+      '<img class="dq-code" src="images/alphanation-demo-qr.svg" width="232" height="232" alt="QR code that opens ' + shortUrl + '">' +
+      '<p class="dq-text">Built for touch and swipe, like the native app it’s becoming. Point your phone’s camera at the code.</p>' +
+      '<span class="dq-url">' + shortUrl + '</span>' +
+    '</div>' +
+    '<a class="dq-fallback" href="' + url + '" target="_blank" rel="noopener">Open in this browser anyway &#8599;<span class="visually-hidden"> (opens in a new tab)</span></a>';
+  document.body.appendChild(dlg);
 
-    btn.addEventListener('click', function (e) {
+  var opener = null;
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (!desktop.matches || e.metaKey || e.ctrlKey || e.shiftKey) return;
       e.preventDefault();
-      if (pinned) { close(); } else { pinned = true; open(); }
+      opener = a;
+      dlg.showModal();
+      dlg.querySelector('.dq-close').focus();
     });
-    if (window.matchMedia('(hover: hover)').matches) {
-      btn.addEventListener('mouseenter', open);
-      btn.addEventListener('mouseleave', softClose);
-      pop.addEventListener('mouseenter', function () { clearTimeout(hideTimer); });
-      pop.addEventListener('mouseleave', softClose);
-    }
-    btn.addEventListener('focus', function () { if (btn.matches(':focus-visible')) open(); });
-    btn.addEventListener('blur', function () { if (!pinned) close(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && pop.classList.contains('is-open')) { close(); btn.focus(); } });
-    document.addEventListener('click', function (e) { if (pinned && !wrap.contains(e.target) && !pop.contains(e.target)) close(); });
-    window.addEventListener('scroll', function () { if (pop.classList.contains('is-open')) place(); }, { passive: true });
-    window.addEventListener('resize', function () { if (pop.classList.contains('is-open')) place(); });
   });
+  dlg.querySelector('.dq-close').addEventListener('click', function () { dlg.close(); });
+  dlg.querySelector('.dq-fallback').addEventListener('click', function () { dlg.close(); });
+  // Click on the dimmed backdrop closes it
+  dlg.addEventListener('click', function (e) {
+    var r = dlg.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dlg.close();
+  });
+  dlg.addEventListener('close', function () { if (opener) opener.focus(); });
 })();

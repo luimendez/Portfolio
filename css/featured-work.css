@@ -441,3 +441,8 @@
   .work-section .columns-2.alpha::before { top: 78px; }
   .work-section .columns-2.art-row::before { top: 102px; bottom: 48px; }
 }
+
+/* Showreel phone: play icon appears on hover or keyboard focus, like Ask Tiki. */
+.work-section .reel-row .reel-phone-play { opacity: 0; transition: opacity .3s ease; }
+.work-section .reel-row .phone:hover .reel-phone-play,
+.work-section .reel-row .reel-phone-play:focus-visible { opacity: 1; }

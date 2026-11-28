@@ -355,3 +355,12 @@
   .contact-section .hero-content-block > .hero-button-link-block { margin-left: 232px; }
   .contact-section .contact-direct { margin-left: 212px; }
 }
+
+/* Every project panel gets the same 28px rounded corners as Alphanation */
+.work-section .columns-2.mission-row::before,
+.work-section .columns-2.tiki-row::before,
+.work-section .columns-2.alpha::before,
+.work-section .columns-2.reel-row::before,
+.work-section .columns-2.art-row::before,
+.work-section .columns-2.bewts.case::before { border-radius: 28px; }
+.work-section .columns-2.bewts.case { border-radius: 28px; }

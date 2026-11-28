@@ -1,0 +1,77 @@
+/* "Best on your phone": a QR pop-up beside the Alphanation demo links.
+   Desktop only; on phones and touch screens the demo link already works. */
+.demo-qr { display: inline-flex; }
+.demo-qr-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font: inherit;
+}
+.demo-qr-toggle svg { width: 14px; height: 14px; flex: none; }
+/* Home page card: matches the card's text links */
+.card-links .demo-qr-toggle {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #0f6b80;
+  font-weight: 700;
+  font-size: inherit;
+}
+.card-links .demo-qr-toggle:hover,
+.card-links .demo-qr-toggle[aria-expanded="true"] { color: #0b4e5e; text-decoration: underline; text-underline-offset: 3px; }
+
+.demo-qr-pop {
+  position: fixed;
+  z-index: 3000;
+  width: 208px;
+  padding: 16px 16px 14px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(11, 40, 50, .28), 0 2px 6px rgba(11, 40, 50, .12);
+  font-family: "Plus Jakarta Sans", Montserrat, system-ui, sans-serif;
+  text-align: center;
+  color: #13303a;
+  opacity: 0;
+  transform: translateY(6px) scale(.98);
+  transition: opacity .18s ease, transform .18s ease;
+  pointer-events: none;
+}
+.demo-qr-pop.is-open { opacity: 1; transform: none; pointer-events: auto; }
+.demo-qr-pop.is-below { transform-origin: top center; }
+.demo-qr-pop::after {
+  content: "";
+  position: absolute;
+  left: var(--arrow-x, 50%);
+  bottom: -6px;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  background: #fff;
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+.demo-qr-pop.is-below::after { bottom: auto; top: -6px; }
+.demo-qr-pop img { display: block; width: 160px; height: 160px; margin: 0 auto 10px; }
+.demo-qr-title { display: block; font-size: 14px; font-weight: 800; letter-spacing: -.01em; }
+.demo-qr-text { display: block; margin-top: 3px; font-size: 12.5px; line-height: 1.45; color: #4d6670; }
+
+@media (hover: none), (max-width: 767px) {
+  .demo-qr { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .demo-qr-pop { transition: none; }
+}
+/* Case study hero: a quiet text link beside the pills */
+.actions .demo-qr { align-self: center; }
+.demo-qr-link {
+  padding: 8px 4px;
+  border: 0;
+  background: none;
+  color: #0f6b80;
+  font-size: 14px;
+  font-weight: 700;
+}
+.demo-qr-link:hover, .demo-qr-link[aria-expanded="true"] { color: #0b4e5e; text-decoration: underline; text-underline-offset: 3px; }
+.demo-qr-link:focus-visible, .card-links .demo-qr-toggle:focus-visible { outline: 2px solid #0f6b80; outline-offset: 3px; border-radius: 6px; }

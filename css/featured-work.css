@@ -364,3 +364,46 @@
 .work-section .columns-2.art-row::before,
 .work-section .columns-2.bewts.case::before { border-radius: 28px; }
 .work-section .columns-2.bewts.case { border-radius: 28px; }
+
+/* Phones and small tablets: shorter panels, so each phone (or the framed
+   painting) hangs further over the top edge and the description card
+   overhangs the bottom edge. */
+@media screen and (max-width: 767px) {
+  /* Alphanation and BEWTS move their backgrounds onto the same panel layer */
+  .work-section .columns-2.alphanation-row,
+  .work-section .columns-2.bewts.case {
+    position: relative;
+    background: none !important;
+    border-radius: 0;
+  }
+  .work-section .columns-2.alphanation-row::before,
+  .work-section .columns-2.bewts.case::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    border-radius: 28px;
+  }
+  .work-section .columns-2.alphanation-row::before {
+    background: linear-gradient(100deg, #f0d1a9, #c5cfcb 40%, #62aab9) center / cover,
+                url("../images/alphanation-wave-texture.jpg") center / cover no-repeat;
+    background-blend-mode: screen;
+  }
+  .work-section .columns-2.bewts.case::before {
+    background: url("../images/TROOPS-BG.jpg") 50% 50% / cover no-repeat;
+  }
+  .work-section .columns-2.alphanation-row > .w-col,
+  .work-section .columns-2.bewts.case > .w-col { position: relative; z-index: 1; }
+
+  .work-section .columns-2.mission-row::before,
+  .work-section .columns-2.alphanation-row::before,
+  .work-section .columns-2.bewts.case::before,
+  .work-section .columns-2.tiki-row::before,
+  .work-section .columns-2.reel-row::before,
+  .work-section .columns-2.alpha::before,
+  .work-section .columns-2.art-row::before { inset: 72px 0 96px; }
+
+  /* Fine Art: let the frame sit at the top like the phones */
+  .work-section .columns-2.art-row { min-height: 0; justify-content: flex-start; }
+  .work-section .art-row-frame { margin: 24px auto 0; }
+}

@@ -407,3 +407,15 @@
   .work-section .columns-2.art-row { min-height: 0; justify-content: flex-start; }
   .work-section .art-row-frame { margin: 24px auto 0; }
 }
+
+/* Phones under 480px: tuck the Alpha Nation Gear card under its phone like the rest */
+@media screen and (max-width: 479px) {
+  .work-section .columns-2.alpha > .column-4.alpha { top: -29px; }
+}
+/* Phones and small tablets: a little more air between the Fine Art frame and its card */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .work-section .columns-2.art-row > .column-4 { top: 20px; }
+}
+@media screen and (max-width: 479px) {
+  .work-section .columns-2.art-row > .column-4 { top: -5px; }
+}

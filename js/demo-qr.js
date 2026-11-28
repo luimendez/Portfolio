@@ -16,7 +16,7 @@
       '<p class="dq-eyebrow">Alphanation demo</p>' +
       '<h2 class="dq-title" id="dq-title">Try it on your phone</h2>' +
       '<img class="dq-code" src="images/alphanation-demo-qr.svg" width="232" height="232" alt="QR code that opens ' + shortUrl + '">' +
-      '<p class="dq-text">Built for touch and swipe, like the native app it’s becoming. Point your phone’s camera at the code.</p>' +
+      '<p class="dq-text">Built for touch and swipe. Point your phone’s camera at the code.</p>' +
       '<span class="dq-url">' + shortUrl + '</span>' +
     '</div>' +
     '<a class="dq-fallback" href="' + url + '" target="_blank" rel="noopener">Open in this browser anyway &#8599;<span class="visually-hidden"> (opens in a new tab)</span></a>';

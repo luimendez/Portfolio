@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap">
   <link rel="preload" href="fonts/cooper-black-wordmark.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="css/alphanation-case-study.css?v=6">
+  <link rel="stylesheet" href="css/alphanation-case-study.css?v=8">
   <link rel="stylesheet" href="css/demo-qr.css?v=4">
 </head>
 <body>
@@ -51,7 +51,7 @@
         </dl>
         <div class="actions">
           <a class="pill pill-primary" href="https://alphanation.app/demo" target="_blank" rel="noopener" data-demo-qr><span class="dq-desktop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>Try the demo</span><span class="dq-mobile">Explore the live demo ↗<span class="visually-hidden"> (opens in a new tab)</span></span></a>
-          <a class="pill pill-glass" href="#scope">See the full scope</a>
+          <a class="pill pill-glass" href="#scope">See the features</a>
         </div>
       </div>
       <div class="phones">
@@ -92,9 +92,9 @@
       </div>
     </section>
 
-    <nav class="wrap" aria-label="Case study sections">
+    <nav class="wrap section-nav" aria-label="Case study sections">
       <ul class="tabs">
-        <li><a href="#scope">Scope</a></li>
+        <li><a href="#scope">Features</a></li>
         <li><a href="#decisions">Decisions</a></li>
         <li><a href="#process">How I work</a></li>
         <li><a href="#evidence">Evidence</a></li>
@@ -102,26 +102,79 @@
     </nav>
 
     <section id="scope" class="wrap section" aria-labelledby="scope-title">
-      <h2 id="scope-title">One product, many connected parts</h2>
-      <p class="intro">Every part shares one idea: help people show up for each other. I designed how they fit together, so each one gives members a reason to use the others.</p>
-      <ul class="grid-3 areas">
-        <li class="glass area"><span class="medallion lake" aria-hidden="true">1</span><p class="kicker">Connect</p><h3>Reach a person</h3><p>One request to opted-in peers, voice calls, and scheduled circle calls.</p></li>
-        <li class="glass area"><span class="medallion lake" aria-hidden="true">2</span><p class="kicker">Community</p><h3>Circles</h3><p>Member-run groups with charters, elected councils, a shared wiki and circle-only posts.</p></li>
-        <li class="glass area"><span class="medallion amber" aria-hidden="true">3</span><p class="kicker">Everyday</p><h3>Home feed</h3><p>Circle activity, member posts and curated stories with the Daily Question, on flippable cards.</p></li>
-        <li class="glass area"><span class="medallion amber" aria-hidden="true">4</span><p class="kicker">Everyday</p><h3>Lounge</h3><p>Curated channels such as Good News, Sports, Vivid Earth, Comedy and Faith &amp; Wisdom, plus 100+ hobby guides, each crediting its source.</p></li>
-        <li class="glass area"><span class="medallion amber" aria-hidden="true">5</span><p class="kicker">Play</p><h3>Rec Room</h3><p>Daily Code Word, trivia, This or That, arcade games and rankings, also playable together during a call.</p></li>
-        <li class="glass area"><span class="medallion lake" aria-hidden="true">6</span><p class="kicker">Self</p><h3>Profiles &amp; journals</h3><p>Personal expression beyond a bio, plus private journals and direct messages.</p></li>
-        <li class="glass area"><span class="medallion lake" aria-hidden="true">7</span><p class="kicker">Access</p><h3>Try before joining</h3><p>Guests can browse public content, and a one-tap demo lets anyone explore as a fictional member.</p></li>
-        <li class="glass area"><span class="medallion amber" aria-hidden="true">8</span><p class="kicker">Operations</p><h3>Owner console</h3><p>A secure command center for moderation, member suspensions and system health.</p></li>
-        <li class="glass area"><span class="medallion amber" aria-hidden="true">9</span><p class="kicker">Assist</p><h3>AI, kept in check</h3><p>A buddy chat, journal insights and story retellings, always run on the server and never acting on accounts.</p></li>
+      <h2 id="scope-title">Inside the app</h2>
+      <p class="intro">Nine connected areas, all built and working. Here are five of them, in the order a new member meets them.</p>
+      <dl class="tour-stats">
+        <div><dt>9</dt><dd>connected areas</dd></div>
+        <div><dt>1</dt><dd>request reaches every available peer</dd></div>
+        <div><dt>10</dt><dd>members to adopt a charter and elect leads</dd></div>
+        <div><dt>100+</dt><dd>hobby guides in the Lounge</dd></div>
+      </dl>
+      <div class="tour">
+        <div class="tour-phone" aria-hidden="true">
+          <div class="phone">
+            <div class="phone-screen"><div class="shot">
+              <img src="images/alphanation-home.png" alt="" data-step="0" class="is-active" loading="lazy">
+              <img src="images/alphanation-connect.png" alt="" data-step="1" loading="lazy">
+              <img src="images/alphanation-connect-flow.png" alt="" data-step="2" loading="lazy">
+              <img src="images/alphanation-circles.png" alt="" data-step="3" loading="lazy">
+              <img src="images/alphanation-lounge.png" alt="" data-step="4" loading="lazy">
+            </div></div>
+          </div>
+        </div>
+        <ol class="tour-steps">
+        <li class="tour-step is-active" data-step="0">
+          <figure class="tour-inline phone"><div class="phone-screen"><div class="shot"><img src="images/alphanation-home.png" alt="Alphanation Home: the Daily Question, with four answers to vote on" loading="lazy"></div></div></figure>
+          <p class="kicker">Home</p>
+          <h3>A daily reason to show up</h3>
+          <p class="tour-text">Home opens on the Daily Question: vote first, then flip the card to see the results. Circle activity, member posts and curated stories fill in around it, so even a brand-new network has something to do.</p>
+          <ul class="tour-points"><li>A new question every day</li><li>Daily Code Word and game rankings</li><li>Every post is a card that flips</li></ul>
+        </li>
+        <li class="tour-step" data-step="1">
+          <figure class="tour-inline phone"><div class="phone-screen"><div class="shot"><img src="images/alphanation-connect.png" alt="Peer Support: the Veterans circle with 3 peers standing by and a Call a Peer button" loading="lazy"></div></div></figure>
+          <p class="kicker">Connect</p>
+          <h3>A real person, one request away</h3>
+          <p class="tour-text">Each circle shows how many peers are standing by. One tap on Call a Peer sends a single request to everyone in that circle who has opted in to receive calls.</p>
+          <ul class="tour-points"><li>Confidential, voice first, camera off</li><li>Receiving calls is its own opt-in, separate from joining</li><li>Scheduled circle calls for planned support</li></ul>
+        </li>
+        <li class="tour-step" data-step="2">
+          <figure class="tour-inline phone"><div class="phone-screen"><div class="shot"><img src="images/alphanation-connect-flow.png" alt="A call ringing available peers: the first peer to answer will join you, camera off" loading="lazy"></div></div></figure>
+          <p class="kicker">The call</p>
+          <h3>The first available peer answers</h3>
+          <p class="tour-text">No one has to pick who to bother. The request rings every available peer at once, and whoever answers first joins the call, camera off.</p>
+          <ul class="tour-points"><li>Live voice calls, tested end to end</li><li>Rec Room games playable together during a call</li><li>Invite someone into the call</li></ul>
+        </li>
+        <li class="tour-step" data-step="3">
+          <figure class="tour-inline phone"><div class="phone-screen"><div class="shot"><img src="images/alphanation-circles.png" alt="Inside the Veterans circle: Receive calls switch, group hangouts, Call a peer, Chat and the wiki" loading="lazy"></div></div></figure>
+          <p class="kicker">Circles</p>
+          <h3>Groups that govern themselves</h3>
+          <p class="tour-text">Once a circle reaches 10 members it can adopt a charter and elect leads who run it, so power doesn’t stay with whoever started the group.</p>
+          <ul class="tour-points"><li>A shared wiki, with member edits reviewed by the group</li><li>Group hangouts and circle-only posts</li><li>A per-circle switch for receiving calls</li></ul>
+        </li>
+        <li class="tour-step" data-step="4">
+          <figure class="tour-inline phone"><div class="phone-screen"><div class="shot"><img src="images/alphanation-lounge.png" alt="The Lounge: a Comedy channel and a members’ Pets channel" loading="lazy"></div></div></figure>
+          <p class="kicker">Lounge</p>
+          <h3>Something good to read on day one</h3>
+          <p class="tour-text">Curated channels such as Good News, Sports, Vivid Earth, Comedy and Faith &amp; Wisdom, plus 100+ hobby guides, give members something to browse by interest.</p>
+          <ul class="tour-points"><li>Every channel links to the original publisher</li><li>Each photographer is credited</li><li>Member channels, such as Pets</li></ul>
+        </li>
+        </ol>
+      </div>
+      <h3 class="h-small also-title">Also in the app</h3>
+      <ul class="also">
+        <li class="glass also-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 11h4M8 9v4"/><circle cx="15.5" cy="10.5" r="1"/><circle cx="17.5" cy="13" r="1"/><path d="M6.5 6h11A3.5 3.5 0 0 1 21 9.5v5a3.5 3.5 0 0 1-6.3 2.1L13.5 15h-3l-1.2 1.6A3.5 3.5 0 0 1 3 14.5v-5A3.5 3.5 0 0 1 6.5 6z"/></svg><h4>Rec Room</h4><p>Daily Code Word, trivia, This or That, arcade games and rankings.</p></li>
+        <li class="glass also-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg><h4>Profiles &amp; journals</h4><p>Personal expression beyond a bio, private journals and direct messages.</p></li>
+        <li class="glass also-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><h4>Try before joining</h4><p>Guests browse public content, and a one-tap demo lets anyone explore as a fictional member.</p></li>
+        <li class="glass also-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v5.5c0 4.7-3.4 8.4-8 9.5-4.6-1.1-8-4.8-8-9.5V6z"/><path d="M9 12l2 2 4-4"/></svg><h4>Owner console</h4><p>Moderation, member suspensions and system health in one secure command center.</p></li>
+        <li class="glass also-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><h4>AI, kept in check</h4><p>A buddy chat, journal insights and story retellings, always run on the server and never acting on accounts.</p></li>
       </ul>
     </section>
 
     <section id="decisions" class="band section" aria-labelledby="decisions-title">
       <div class="wrap">
         <h2 id="decisions-title">Three decisions, start to finish</h2>
-        <p class="intro">Each card flips like a post in the app: the screen on the front, the reasoning on the back.</p>
-        <div class="grid-3 stories">
+        <p class="intro">Each one shows the screen, the options I weighed, what I chose and what is still open.</p>
+        <div class="stories">
 
           <article class="story" aria-labelledby="story-connect">
             <p class="kicker">Connect</p>
@@ -139,7 +192,6 @@
               <div><dt>What I built</dt><dd>Per-circle availability, the request flow and live voice calls, tested end to end.</dd></div>
               <div class="open"><dt>Still open</dt><dd>How quickly requests get answered as more members join, and what helps most when nobody is free.</dd></div>
             </dl>
-            <button class="flip" type="button" aria-controls="back-connect" aria-expanded="false" hidden>See the reasoning ↻</button>
           </article>
 
           <article class="story" aria-labelledby="story-circles">
@@ -158,7 +210,6 @@
               <div><dt>What I built</dt><dd>Circle charters, council elections and a shared wiki with edit review.</dd></div>
               <div class="open"><dt>Still open</dt><dd>Edge cases across an election, and how to prevent abuse of votes and edits.</dd></div>
             </dl>
-            <button class="flip" type="button" aria-controls="back-circles" aria-expanded="false" hidden>See the reasoning ↻</button>
           </article>
 
           <article class="story" aria-labelledby="story-home">
@@ -177,7 +228,6 @@
               <div><dt>What I built</dt><dd>Lounge channels such as Good News, Sports and Fun Facts, the Daily Question, Daily Code Word and game rankings.</dd></div>
               <div class="open"><dt>Still open</dt><dd>Whether this brings people back, and how to keep curated content relevant without crowding out circle posts.</dd></div>
             </dl>
-            <button class="flip" type="button" aria-controls="back-home" aria-expanded="false" hidden>See the reasoning ↻</button>
           </article>
 
         </div>
@@ -251,17 +301,53 @@
   </footer>
 
   <script>
-    // Flip cards: without JavaScript both faces stay visible; with it, each card shows one face at a time.
-    document.querySelectorAll('.story').forEach(function (card) {
-      var button = card.querySelector('.flip');
-      card.classList.add('is-flippable');
-      button.hidden = false;
-      button.addEventListener('click', function () {
-        var flipped = card.classList.toggle('is-flipped');
-        button.setAttribute('aria-expanded', String(flipped));
-        button.textContent = flipped ? 'Show the screen ↺' : 'See the reasoning ↻';
-      });
-    });
+    // Section menu: highlight the section being read.
+    (function () {
+      var links = [].slice.call(document.querySelectorAll('.section-nav a'));
+      var map = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+      var queued = false, last = -2;
+      function update() {
+        queued = false;
+        var mid = window.innerHeight * 0.35, current = -1;
+        map.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= mid) current = i; });
+        if (current === last) return;
+        last = current;
+        links.forEach(function (a, i) {
+          if (i === current) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+        });
+        var active = links[current], list = links[0] && links[0].closest('ul');
+        if (active && list && list.scrollWidth > list.clientWidth) {
+          var r = active.getBoundingClientRect(), lr = list.getBoundingClientRect();
+          if (r.left < lr.left || r.right > lr.right) list.scrollTo({ left: list.scrollLeft + r.left - lr.left - 12, behavior: 'smooth' });
+        }
+      }
+      window.addEventListener('scroll', function () { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
+      update();
+    })();
+  </script>
+  <script>
+    // Feature tour: on wide screens the pinned phone shows the step being read.
+    (function () {
+      var steps = [].slice.call(document.querySelectorAll('.tour-step'));
+      var shots = [].slice.call(document.querySelectorAll('.tour-phone img'));
+      if (!steps.length || !shots.length) return;
+      var queued = false, current = 0;
+      function update() {
+        queued = false;
+        var mid = window.innerHeight / 2, best = 0, dist = Infinity;
+        steps.forEach(function (s, i) {
+          var r = s.getBoundingClientRect(), d = Math.abs(r.top + r.height / 2 - mid);
+          if (d < dist) { dist = d; best = i; }
+        });
+        if (best === current) return;
+        current = best;
+        steps.forEach(function (s, i) { s.classList.toggle('is-active', i === best); });
+        shots.forEach(function (img, i) { img.classList.toggle('is-active', i === best); });
+      }
+      window.addEventListener('scroll', function () { if (!queued) { queued = true; requestAnimationFrame(update); } }, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
   </script>
   <script src="js/demo-qr.js?v=5"></script>
 </body>

@@ -223,6 +223,7 @@
 .work-section .reel-link { padding: 0; border: 0; background: none; font: inherit; cursor: pointer; }
 
 .reel-dialog { width: min(1100px, 94vw); max-width: none; padding: 0; border: 0; border-radius: 14px; overflow: visible; background: #000; }
+.reel-dialog:focus { outline: none; }
 .reel-dialog::backdrop { background: rgba(0, 0, 0, .85); }
 .reel-dialog video { display: block; width: 100%; border-radius: 14px; }
 .reel-close {

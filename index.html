@@ -196,7 +196,7 @@
           <div class="column-4 w-col w-col-6">
             <div class="div-block-20 project-card card-tiki">
               <div class="card-head"><p class="card-eyebrow">Augmented reality app</p><h3 class="card-title">Ask Tiki</h3></div>
-              <div class="text-block-13">Ask a yes-or-no question and a tiki totem answers with a thumbs up or thumbs down, like an augmented reality Magic 8 Ball. I built it for iPhone in Unity with Apple&#x27;s ARKit, modeled the characters in Maya and Mudbox, and produced the promo video in After Effects and Premiere Pro.</div>
+              <div class="text-block-13">Ask a yes-or-no question and a tiki totem answers with a thumbs up or thumbs down, like an augmented reality Magic 8 Ball. I built it for iPhone in Unity with Apple&#x27;s ARKit, modeled the characters in Maya and Mudbox, and produced the promo video in After Effects and Premiere Pro.<span class="card-links"><a href="https://vimeo.com/266023945" target="_blank" rel="noopener" class="case-link tiki-video-link">Watch the video &rarr;</a></span></div>
             </div>
           </div>
         </div>
@@ -398,6 +398,19 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
     paint();
+  })();
+  </script>
+  <script>
+  // Ask Tiki: open the promo video in the same pop-up player as the phone.
+  (function () {
+    var link = document.querySelector('.tiki-video-link');
+    var player = document.querySelector('.card-tiki') && document.querySelector('.lightbox-link-4');
+    if (!link || !player) return;
+    link.addEventListener('click', function (e) {
+      if (!window.Webflow || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+      player.click();
+    });
   })();
   </script>
 </body>

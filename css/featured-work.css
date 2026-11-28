@@ -419,3 +419,24 @@
 @media screen and (max-width: 479px) {
   .work-section .columns-2.art-row > .column-4 { top: -5px; }
 }
+
+/* Phones: the phone (or frame) overhangs the panel's top by the same amount
+   the description card overhangs its bottom. */
+@media screen and (max-width: 479px) {
+  .work-section .columns-2.mission-row::before,
+  .work-section .columns-2.alphanation-row::before,
+  .work-section .columns-2.bewts.case::before,
+  .work-section .columns-2.tiki-row::before,
+  .work-section .columns-2.reel-row::before,
+  .work-section .columns-2.alpha::before { top: 46px; }
+  .work-section .columns-2.art-row::before { top: 70px; bottom: 72px; }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .work-section .columns-2.mission-row::before,
+  .work-section .columns-2.alphanation-row::before,
+  .work-section .columns-2.bewts.case::before,
+  .work-section .columns-2.tiki-row::before,
+  .work-section .columns-2.reel-row::before,
+  .work-section .columns-2.alpha::before { top: 78px; }
+  .work-section .columns-2.art-row::before { top: 102px; bottom: 48px; }
+}

@@ -4,7 +4,7 @@
 /* Button labels: desktop vs phone/touch */
 [data-demo-qr] .dq-desktop { display: none; align-items: center; gap: 7px; }
 [data-demo-qr] .dq-desktop svg { width: 15px; height: 15px; flex: none; }
-@media (hover: hover) and (min-width: 768px) {
+@media (min-width: 700px) and (min-height: 600px) {
   [data-demo-qr] .dq-desktop { display: inline-flex; }
   [data-demo-qr] .dq-mobile { display: none; }
 }

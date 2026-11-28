@@ -1,9 +1,9 @@
-// Alphanation demo: on desktop, demo buttons open a QR code to continue on a
+// Alphanation demo: on computers and tablets, demo buttons open a QR code to continue on a
 // phone (the app is built for touch and swipe). Phones open the demo directly.
 (function () {
   var links = document.querySelectorAll('[data-demo-qr]');
   if (!links.length || typeof HTMLDialogElement === 'undefined') return;
-  var desktop = window.matchMedia('(hover: hover) and (min-width: 768px)');
+  var desktop = window.matchMedia('(min-width: 700px) and (min-height: 600px)');
   var url = links[0].href;
   var shortUrl = url.replace(/^https?:\/\//, '');
 
